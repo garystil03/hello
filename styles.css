@@ -24,7 +24,7 @@ meta[name="viewport"] {
 
 /* Iframe Styles */
 iframe {
-    width: 80%; /* Adjust width as needed */
+    width: 90%; /* Adjust width as needed */
     max-width: 1366px; /* Adjust max-width as needed */
     height: 1600px; /* Adjust height as needed */
     border: none; /* Remove iframe border */
