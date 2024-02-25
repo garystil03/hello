@@ -59,13 +59,13 @@ iframe {
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     /* Styles for large screens (e.g., desktops) */
     iframe {
-        width: 200%; /* Adjust width as needed */
+        width: 70%; /* Adjust width as needed */
     }
 }
 
 @media screen and (min-width: 1441px) {
     /* Styles for extra large screens */
     iframe {
-        width: 100%; /* Adjust width as needed */
+        width: 60%; /* Adjust width as needed */
     }
 }
