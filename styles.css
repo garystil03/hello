@@ -28,7 +28,7 @@ meta[name="viewport"] {
 iframe {
     width: 100%; /* Adjust width as needed */
     max-width: 1366px; /* Set maximum width to accommodate the document width */
-    height: 100%;; /* Adjust height as needed */
+    height: 100%; /* Adjust height as needed */
     border: none; /* Remove iframe border */
 }
 
