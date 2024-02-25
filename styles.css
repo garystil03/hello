@@ -43,14 +43,14 @@ iframe {
         padding: 5px; /* Adjust padding as needed */
     }
     iframe {
-        width: 65%; /* Adjust width as needed */
+        width: 75%; /* Adjust width as needed */
     }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     /* Styles for small screens (e.g., smartphones, small tablets) */
     iframe {
-        width:65%; /* Adjust width as needed */
+        width:55%; /* Adjust width as needed */
     }
 }
 
