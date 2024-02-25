@@ -20,7 +20,7 @@ meta[name="viewport"] {
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Horizontally center the content */
     align-items: flex-start; /* Align content to the top */
-    /*overflow: hidden; /* Prevents scrolling if the iframe content exceeds container height */
+    overflow: hidden; /* Prevents scrolling if the iframe content exceeds container height */
     background-color: transparent; /* Set background color to transparent */
 
     /* Hide the scrollbar */
