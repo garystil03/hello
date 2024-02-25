@@ -12,6 +12,6 @@ body, html {
 }
 
 iframe {
-    width: 80%; /* Adjust width as needed */
-    height: 400px; /* Adjust height as needed */
+    width: 1366px; /* Adjust width as needed */
+    height: 1600px; /* Adjust height as needed */
 }
