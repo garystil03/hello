@@ -22,6 +22,18 @@ meta[name="viewport"] {
     align-items: flex-start; /* Align content to the top */
     /*overflow: hidden; /* Prevents scrolling if the iframe content exceeds container height */
     background-color: transparent; /* Set background color to transparent */
+
+    /* Hide the scrollbar */
+    /* For Firefox */
+    .container::-webkit-scrollbar {
+    display: none;
+    }
+
+    /* For Chrome, Safari, and Opera */
+    .container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    }
 }
 
 /* Iframe Styles */
@@ -72,15 +84,5 @@ iframe {
     }
 }
 
-/* Hide the scrollbar */
-/* For Firefox */
-.container::-webkit-scrollbar {
-    display: none;
-}
 
-/* For Chrome, Safari, and Opera */
-.container {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
 
