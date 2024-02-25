@@ -17,9 +17,8 @@ iframe {
     height: 1600px; /* Adjust height as needed */
 }
 
-
 .iframe-white-border {
-    border: 1px solid white; /* You can adjust the width and style as needed */
+    border: 10px solid white; /* You can adjust the width and style as needed */
 }
 
 /* Media query for iPad Pro */
