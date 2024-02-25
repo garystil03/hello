@@ -1,0 +1,17 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-start; /* Vertically align the content to the top */
+    height: 100vh; /* Make the container full height of the viewport */
+}
+
+iframe {
+    width: 80%; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+}
