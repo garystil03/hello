@@ -14,7 +14,7 @@ body, html {
 iframe {
     width: 100%; /* Adjust width as needed */
     max-width: 1366px; /* Set a maximum width for better readability on larger screens */
-    height: 41600px; /* Adjust height as needed */
+    height: 1600px; /* Adjust height as needed */
      border: none; /* Remove the iframe border */
 }
         .iframe-no-border {
