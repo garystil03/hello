@@ -15,17 +15,22 @@ meta[name="viewport"] {
 
 /* Container Styles */
 .container {
-    width: 100%; /* Adjust width as needed */
-    height: 100vh; /* Adjust height as needed */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Horizontally center the content */
-    align-items: flex-start; /* Align content to the top */
-    background-color: transparent; /* Set background color to transparent */
-    /* Add scrollbar hiding CSS */
-    /* Webkit-based browsers (Chrome, Safari) */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    overflow: -moz-scrollbars-none;  /* Firefox */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: transparent;
+    /* Hide scrollbar for Webkit-based browsers (Chrome, Safari) */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+    overflow: -moz-scrollbars-none; /* For Firefox */
+    overflow: auto; /* Default overflow property */
+}
+
+/* Hide scrollbar for Webkit-based browsers (Chrome, Safari) */
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 /* Iframe Styles */
