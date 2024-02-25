@@ -24,7 +24,6 @@ meta[name="viewport"] {
     background-color: transparent; /* Set background color to transparent */
 }
 
-
 /* Iframe Styles */
 iframe {
     width: 100%; /* Adjust width as needed */
@@ -72,3 +71,16 @@ iframe {
         width: 90%; /* Adjust width as needed */
     }
 }
+
+/* Hide the scrollbar */
+/* For Firefox */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Chrome, Safari, and Opera */
+.container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
