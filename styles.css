@@ -9,6 +9,7 @@ body, html {
     justify-content: center; /* Horizontally center the content */
     align-items: flex-start; /* Vertically align the content to the top */
     height: 100vh; /* Make the container full height of the viewport */
+    border: none;
 }
 
 iframe {
@@ -17,8 +18,8 @@ iframe {
     height: 1600px; /* Adjust height as needed */
 }
 
-.iframe-white-border {
-    border: 100px solid white; /* You can adjust the width and style as needed */
+.iframe-no-border {
+    border: none; /* Remove the iframe border */
 }
 
 /* Media query for iPad Pro */
