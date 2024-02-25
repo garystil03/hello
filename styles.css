@@ -59,7 +59,7 @@ iframe {
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     /* Styles for large screens (e.g., desktops) */
     iframe {
-        width: 70%; /* Adjust width as needed */
+        width: 80%; /* Adjust width as needed */
     }
 }
 
