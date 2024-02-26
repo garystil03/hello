@@ -77,6 +77,17 @@ iframe {
     }
 }
 
+/* Your existing CSS styles */
+
+/* Media queries for high-density screens (Retina displays) */
+@media only screen and (min--moz-device-pixel-ratio: 2), 
+       only screen and (-webkit-min-device-pixel-ratio: 2), 
+       only screen and (min-resolution: 2dppx) {
+    /* Styles for devices with DPR 2 or higher */
+    /* Adjustments for high-density screens */
+}
+
+
 
 
 
