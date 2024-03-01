@@ -12,13 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    overflow-x: hidden;
-}
-
-/* Hide scrollbar for Webkit-based browsers (Chrome, Safari) */
-.container::-webkit-scrollbar {
-    display: none;
 }
 
 /* Iframe Styles */
@@ -28,52 +21,3 @@ iframe {
     border: none; /* Remove iframe border */
     overflow: auto; /* or overflow: hidden; */
 }
-
-/* Media Queries */
-/* Apply specific CSS rules based on screen width */
-@media screen and (max-width: 480px) {
-    /* Styles for extra small screens (e.g., smartphones) */
-    .container {
-        padding: 5px; /* Adjust padding as needed */
-    }
-    iframe {
-        width: 65%; /* Adjust width as needed */
-    }
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    /* Styles for small screens (e.g., smartphones, small tablets) */
-    iframe {
-        width: 65%; /* Adjust width as needed */
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Styles for medium screens (e.g., tablets, laptops) */
-    iframe {
-        width: 75%; /* Adjust width as needed */
-    }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-    /* Styles for large screens (e.g., desktops) */
-    iframe {
-        width: 100%; /* Adjust width as needed */
-    }
-}
-
-@media screen and (min-width: 1441px) {
-    /* Styles for extra large screens */
-    iframe {
-        width: 100%; /* Adjust width as needed */
-    }
-}
-
-/* Media queries for high-density screens (Retina displays) */
-@media only screen and (min--moz-device-pixel-ratio: 2), 
-       only screen and (-webkit-min-device-pixel-ratio: 2), 
-       only screen and (min-resolution: 2dppx) {
-    /* Styles for devices with DPR 2 or higher */
-    /* Adjustments for high-density screens */
-}
-
