@@ -16,9 +16,11 @@ html, body {
 
 /* Iframe Styles */
 iframe {
-    width: 98%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     height: 100vh; /* Set iframe height to full viewport height */
     border: none; /* Remove iframe border */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
 }
 
 /* Responsive Styles */
