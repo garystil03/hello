@@ -16,8 +16,8 @@ html, body {
 
 /* Iframe Styles */
 iframe {
-    width: 95%; /* Adjust width as needed */
-    height: 95%; /* Adjust height as needed */
+    width: 98%; /* Adjust width as needed */
+    height: 98%; /* Adjust height as needed */
     border: none; /* Remove iframe border */
 }
 
@@ -25,33 +25,33 @@ iframe {
 @media screen and (max-width: 768px) {
     /* For screens up to tablet size */
     .container {
-        height: 70vh; /* Adjust height as needed */
+        height: 80vh; /* Adjust height as needed */
     }
     iframe {
-        width: 90%; /* Adjust width as needed */
-        height: 90%; /* Adjust height as needed */
+        width: 95%; /* Adjust width as needed */
+        height: 95%; /* Adjust height as needed */
     }
 }
 
 @media screen and (max-width: 576px) {
     /* For screens up to mobile size */
     .container {
-        height: 50vh; /* Adjust height as needed */
+        height: 60vh; /* Adjust height as needed */
     }
     iframe {
-        width: 90%; /* Adjust width as needed */
-        height: 90%; /* Adjust height as needed */
+        width: 95%; /* Adjust width as needed */
+        height: 95%; /* Adjust height as needed */
     }
 }
 
 @media screen and (min-width: 992px) {
     /* For screens larger than tablet but smaller than desktop */
     .container {
-        height: 90vh; /* Adjust height as needed */
+        height: 95vh; /* Adjust height as needed */
     }
     iframe {
-        width: 85%; /* Adjust width as needed */
-        height: 85%; /* Adjust height as needed */
+        width: 90%; /* Adjust width as needed */
+        height: 90%; /* Adjust height as needed */
     }
 }
 
