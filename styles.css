@@ -31,7 +31,7 @@
 /* Iframe Styles */
 iframe {
     width: 100%; /* Adjust width as needed */
-    //max-width: 792px; /* Set maximum width to accommodate the document width */
+    /*max-width: 792px; Set maximum width to accommodate the document width */
     height: 100%; /* Adjust height as needed */
     border: none; /* Remove iframe border */
     overflow: auto; /* or overflow: hidden; */
