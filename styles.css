@@ -9,18 +9,12 @@
 /* Container Styles */
 .container {
     width: 100%;
-    height: 100vh;
+    height: 100%
     display: flex;
     justify-content: center;
     align-items: flex-start;
     background-color: transparent;
     overflow-x: hidden;
-
-    /* Hide scrollbar for Webkit-based browsers (Chrome, Safari) */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For IE and Edge */
-    overflow: -moz-scrollbars-none; /* For Firefox */
-    overflow: auto; /* Default overflow property */
 }
 
 /* Hide scrollbar for Webkit-based browsers (Chrome, Safari) */
