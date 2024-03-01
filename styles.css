@@ -12,7 +12,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-color: transparent;
     overflow-x: hidden;
 }
