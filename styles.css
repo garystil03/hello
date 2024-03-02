@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow: hidden; /* Ensure no overflow causes scrolling */
 }
 
 /* Container Styles */
@@ -12,7 +13,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Ensure no overflow causes scrolling */
 }
 
 /* Iframe Styles */
@@ -22,6 +22,7 @@ iframe {
     border: none; /* Remove iframe border */
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
+    display: block; /* Ensure iframe is displayed as a block element */
 }
 
 /* Responsive Styles */
