@@ -27,9 +27,58 @@ iframe {
 }
 
 /* Responsive Styles */
+@media screen and (max-width: 576px) {
+    /* For screens up to mobile size */
+    .container {
+        height: 90vh; /* Adjust height as needed */
+    }
+    iframe {
+        width: 100%; /* Adjust width as needed */
+        height: 90vh; /* Adjust height as needed */
+    }
+}
+
 @media screen and (max-width: 768px) {
     /* For screens up to tablet size (landscape and smaller tablets) */
     .container {
-        height: 100vh; /* Adjust height as needed */
+        height: 90vh; /* Adjust height as needed */
+    }
+    iframe {
+        width: 100%; /* Adjust width as needed */
+        height: 90vh; /* Adjust height as needed */
     }
 }
+
+@media screen and (max-width: 992px) {
+    /* For screens up to smaller desktops and tablets */
+    .container {
+        height: 80vh; /* Adjust height as needed */
+    }
+    iframe {
+        width: 100%; /* Adjust width as needed */
+        height: 80vh; /* Adjust height as needed */
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* For screens up to large desktop monitors */
+    .container {
+        height: 70vh; /* Adjust height as needed */
+    }
+    iframe {
+        width: 100%; /* Adjust width as needed */
+        height: 70vh; /* Adjust height as needed */
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    /* For screens larger than large desktop monitors */
+    .container {
+        height: 60vh; /* Adjust height as needed */
+    }
+    iframe {
+        width: 100%; /* Adjust width as needed */
+        height: 60vh; /* Adjust height as needed */
+    }
+}
+
