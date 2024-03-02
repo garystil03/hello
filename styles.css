@@ -13,12 +13,13 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Ensure no overflow causes scrolling */
 }
 
 /* Iframe Styles */
 iframe {
-    width: 100%; /* Adjust width as needed */
-    height: 100%; /* Set iframe height to full container height */
+    width: 100vw; /* Set iframe width to full viewport width */
+    height: 100vh; /* Set iframe height to full viewport height */
     border: none; /* Remove iframe border */
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
@@ -26,37 +27,9 @@ iframe {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 576px) {
-    /* For screens up to mobile size (phones) */
-    .container {
-        height: 90vh; /* Adjust height as needed */
-    }
-}
-
 @media screen and (max-width: 768px) {
     /* For screens up to tablet size (landscape and smaller tablets) */
     .container {
-        height: 90vh; /* Adjust height as needed */
-    }
-}
-
-@media screen and (max-width: 992px) {
-    /* For screens up to smaller desktops and tablets */
-    .container {
-        height: 80vh; /* Adjust height as needed */
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    /* For screens up to large desktop monitors */
-    .container {
-        height: 70vh; /* Adjust height as needed */
-    }
-}
-
-@media screen and (min-width: 1201px) {
-    /* For screens larger than large desktop monitors */
-    .container {
-        height: 60vh; /* Adjust height as needed */
+        height: 100vh; /* Adjust height as needed */
     }
 }
