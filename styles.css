@@ -13,7 +13,6 @@ html, body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    position: relative; /* Required for absolute positioning of iframe */
 }
 
 /* Iframe Styles */
@@ -23,6 +22,7 @@ iframe {
     height: 100vh;
     border: none;
     display: block;
+    /* Center iframe using CSS transform */
     position: absolute;
     top: 50%;
     left: 50%;
