@@ -3,7 +3,6 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Ensure no overflow causes scrolling */
 }
 
 /* Container Styles */
@@ -21,8 +20,6 @@ iframe {
     width: 100%; /* Set iframe width to full viewport width */
     height: 100%; /* Set iframe height to full container height */
     border: none; /* Remove iframe border */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
     display: block; /* Ensure iframe is displayed as a block element */
 }
 
