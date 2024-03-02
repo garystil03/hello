@@ -22,45 +22,4 @@ iframe {
     height: 100vh;
     border: none;
     display: block;
-    /* Center iframe using CSS transform */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 576px) {
-    /* For screens up to mobile size */
-    iframe {
-        height: 80vh; /* Adjust height for smaller screens */
-    }
-}
-
-@media screen and (min-width: 577px) and (max-width: 768px) {
-    /* For screens up to tablet size */
-    iframe {
-        height: 90vh; /* Adjust height for tablet screens */
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 992px) {
-    /* For screens up to small desktop size */
-    iframe {
-        height: 95vh; /* Adjust height for small desktop screens */
-    }
-}
-
-@media screen and (min-width: 993px) and (max-width: 1200px) {
-    /* For screens up to medium desktop size */
-    iframe {
-        height: 97vh; /* Adjust height for medium desktop screens */
-    }
-}
-
-@media screen and (min-width: 1201px) {
-    /* For screens larger than medium desktop */
-    iframe {
-        height: 98vh; /* Adjust height for large desktop screens */
-    }
 }
