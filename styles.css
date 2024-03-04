@@ -43,7 +43,7 @@ iframe {
     /* Adjust styles for smaller tablets */
     .container {
         /* Example adjustments for smaller tablets */
-        padding: 20px;
+        padding: 0px;
     }
     iframe {
         /* Example adjustments for smaller tablets */
@@ -57,7 +57,7 @@ iframe {
     /* Adjust styles for MacBook Air and similar screens */
     .container {
         /* Example adjustments for MacBook Air and similar screens */
-        padding: 30px;
+        padding: 0px;
     }
     iframe {
         /* Example adjustments for MacBook Air and similar screens */
@@ -71,7 +71,7 @@ iframe {
     /* Adjust styles for medium-sized screens */
     .container {
         /* Example adjustments for medium-sized screens */
-        padding: 40px;
+        padding: 0px;
     }
     iframe {
         /* Example adjustments for medium-sized screens */
@@ -85,7 +85,7 @@ iframe {
     /* Adjust styles for larger screens */
     .container {
         /* Example adjustments for larger screens */
-        padding: 50px;
+        padding: 0px;
     }
     iframe {
         /* Example adjustments for larger screens */
