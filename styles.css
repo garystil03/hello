@@ -61,7 +61,7 @@ iframe {
     }
     iframe {
         /* Example adjustments for MacBook Air and similar screens */
-        width: 80%;
+        width: 90%;
         height: 80vh;
     }
 }
