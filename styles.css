@@ -51,7 +51,7 @@ iframe {
 @media screen and (min-width: 993px) and (max-width: 1200px) {
     /* For screens up to medium desktop size */
     iframe {
-        width: 60%; /* Adjust width for medium desktop screens */
+        width: 80%; /* Adjust width for medium desktop screens */
         height: 97vh; /* Adjust height for medium desktop screens */
     }
 }
