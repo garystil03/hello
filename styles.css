@@ -19,29 +19,21 @@ html, body {
 /* Iframe Styles */
 iframe {
     width: 100%;
-    height: auto; /* Allow iframe to adjust height according to its content */
+    height: 100%; /* Set iframe height to fill the container */
     border: none; /* Remove iframe border */
 }
 
 /* Responsive Styles */
 /* For screens up to mobile size */
 @media screen and (max-width: 576px) {
-    /* Adjust styles for mobile screens */
-    .container {
-        /* Example adjustments for mobile screens */
-        padding: 0;
-    }
     iframe {
-        /* Example adjustments for mobile screens */
         max-height: 60vh;
     }
 }
 
 /* For screens larger than mobile but up to smaller tablets */
 @media screen and (min-width: 577px) and (max-width: 768px) {
-    /* Adjust styles for smaller tablets */
     iframe {
-        /* Example adjustments for smaller tablets */
         max-height: 70vh;
         max-width: 90%;
     }
@@ -49,9 +41,7 @@ iframe {
 
 /* For screens larger than smaller tablets but up to MacBook Air resolution */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
-    /* Adjust styles for MacBook Air and similar screens */
     iframe {
-        /* Example adjustments for MacBook Air and similar screens */
         max-height: 80vh;
         max-width: 90%;
     }
@@ -59,9 +49,7 @@ iframe {
 
 /* For screens larger than MacBook Air but up to iPad Pro resolution */
 @media screen and (min-width: 1367px) and (max-width: 2732px) {
-    /* Adjust styles for medium-sized screens */
     iframe {
-        /* Example adjustments for medium-sized screens */
         max-height: 90vh;
         max-width: 80%;
     }
@@ -69,9 +57,7 @@ iframe {
 
 /* For screens larger than iPad Pro resolution */
 @media screen and (min-width: 2733px) {
-    /* Adjust styles for larger screens */
     iframe {
-        /* Example adjustments for larger screens */
         max-height: 95vh;
         max-width: 60%;
     }
