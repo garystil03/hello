@@ -12,7 +12,7 @@ html, body {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: flex-start; /* Align to the top vertically */
-    overflow: hidden;
+    overflow: auto; /* Enable scrolling if content exceeds container dimensions */
     position: relative;
 }
 
