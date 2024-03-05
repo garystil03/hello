@@ -48,8 +48,8 @@ iframe {
 /* For screens larger than smaller tablets but up to MacBook Air resolution */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
     iframe {
-        max-height: 80%;
-        max-width: 90%;
+        max-height: 100%;
+        max-width: 100%;
     }
 }
 
