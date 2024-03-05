@@ -14,7 +14,7 @@ html, body {
     height: 100vh; /* Set container height to full viewport height */
     display: flex;
     justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align to the top vertically */
+
     overflow: auto; /* Enable scrolling if content exceeds container dimensions */
     position: relative;
 }
