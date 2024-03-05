@@ -14,6 +14,8 @@ html, body {
     align-items: flex-start; /* Align to the top vertically */
     overflow: hidden;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 /* Iframe Styles */
@@ -21,7 +23,10 @@ iframe {
     width: 100%;
     height: auto; /* Allow iframe to adjust height according to its content */
     border: none; /* Remove iframe border */
+    margin: 0;
+    padding: 0;
 }
+
 
 /* Responsive Styles */
 /* For screens up to mobile size */
