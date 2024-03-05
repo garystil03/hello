@@ -1,10 +1,17 @@
+/* Reset CSS */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 /* Container Styles */
 .container {
     width: 100%;
-    height: 100vh;
+    height: 100vh; /* Set container height to full viewport height */
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top vertically */
     overflow: hidden;
     position: relative;
     margin: 0;
@@ -14,8 +21,63 @@
 /* Iframe Styles */
 iframe {
     width: 100%;
-    height: 100%;
-    border: none;
+    height: auto; /* Allow iframe to adjust height according to its content */
+    border: none; /* Remove iframe border */
     margin: 0;
     padding: 0;
+}
+
+
+/* Responsive Styles */
+/* For screens up to mobile size */
+@media screen and (max-width: 576px) {
+    /* Adjust styles for mobile screens */
+    .container {
+        /* Example adjustments for mobile screens */
+        padding: 0;
+    }
+    iframe {
+        /* Example adjustments for mobile screens */
+        max-height: 60vh;
+    }
+}
+
+/* For screens larger than mobile but up to smaller tablets */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    /* Adjust styles for smaller tablets */
+    iframe {
+        /* Example adjustments for smaller tablets */
+        max-height: 70vh;
+        max-width: 90%;
+    }
+}
+
+/* For screens larger than smaller tablets but up to MacBook Air resolution */
+@media screen and (min-width: 769px) and (max-width: 1366px) {
+    /* Adjust styles for MacBook Air and similar screens */
+    iframe {
+        /* Example adjustments for MacBook Air and similar screens */
+        max-height: 80vh;
+        max-width: 90%;
+    }
+}
+
+/* For screens larger than MacBook Air but up to iPad Pro resolution */
+@media screen and (min-width: 1367px) and (max-width: 2732px) {
+    /* Adjust styles for medium-sized screens */
+    iframe {
+        /* Example adjustments for medium-sized screens */
+        max-height: 90vh;
+        max-width: 80%;
+    }
+}
+
+/* For screens larger than iPad Pro resolution */
+@media screen and (min-width: 2733px) {
+    /* Adjust styles for larger screens */
+    iframe {
+        /* Example adjustments for larger screens */
+        max-height: 95vh;
+        max-width: 60%;
+    }
 }
