@@ -51,7 +51,7 @@ iframe {
 @media screen and (min-width: 769px) and (max-width: 1366px) {
     iframe {
         max-height: 100%;
-        max-width:70%; /* Reduce the width at larger screen sizes */
+        max-width: 70%; /* Reduce the width at larger screen sizes */
     }
 }
 
