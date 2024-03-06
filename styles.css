@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow: hidden; /* Added to prevent scrolling */
 }
 
 /* Container Styles */
@@ -12,10 +13,7 @@ html, body {
     display: flex;
     align-items: flex-start; /* Align to the top edge vertically */
     justify-content: center; /* Center horizontally */
-    overflow: auto;
     position: relative;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
@@ -24,11 +22,7 @@ iframe {
     width: 100%;
     height: 100%;
     border: none; /* Remove iframe border */
-    margin: 0;
-    padding: 0;
     object-fit: contain; /* Ensure the iframe content fits within the container without distortion */
-    max-height: 100%;
-    max-width: 100%;
     vertical-align: top; /* Align the content of the iframe to the top of the container */
 }
 
