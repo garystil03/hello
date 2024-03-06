@@ -27,6 +27,8 @@ iframe {
     margin: 0;
     padding: 0;
     object-fit: contain; /* Ensure the iframe content fits within the container without distortion */
+    max-height: 100%;
+    max-width: 100%;
 }
 
 /* Responsive Styles */
@@ -45,26 +47,12 @@ iframe {
     }
 }
 
-/* For screens larger than smaller tablets but up to MacBook Air resolution */
-@media screen and (min-width: 769px) and (max-width: 1366px) {
-    iframe {
-        max-height: 100%;
-        max-width: 100%;
-    }
-}
-
-/* For screens larger than MacBook Air but up to iPad Pro resolution */
-@media screen and (min-width: 1367px) and (max-width: 2732px) {
-    iframe {
-        max-height: 100%
-        max-width: 100%;
-    }
+/* For screens larger than smaller tablets but up to iPad Pro resolution */
+@media screen and (min-width: 769px) and (max-width: 2732px) {
+    /* Styles already defined in iframe */
 }
 
 /* For screens larger than iPad Pro resolution */
 @media screen and (min-width: 2733px) {
-    iframe {
-        max-height: 100%;
-        max-width: 100%;
-    }
+    /* Styles already defined in iframe */
 }
