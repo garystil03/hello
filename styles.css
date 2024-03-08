@@ -2,7 +2,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     overflow: hidden; /* Added to prevent scrolling */
     background-color: white;
 }
@@ -10,12 +9,12 @@ html, body {
 /* Container Styles */
 .container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: flex-start; /* Align to the top edge vertically */
     justify-content: center; /* Center horizontally */
     position: relative;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
     background-color: white;
 }
 
