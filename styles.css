@@ -15,6 +15,7 @@ html, body {
     justify-content: center; /* Center horizontally */
     position: relative;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: white;
 }
 
 /* Iframe Styles */
