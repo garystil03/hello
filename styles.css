@@ -37,6 +37,15 @@ iframe {
     }
 }
 
+/* Safari-specific CSS */
+@supports (-webkit-touch-callout: none) {
+    /* Adjust iframe alignment for Safari */
+    iframe {
+        position: absolute;
+        top: 0;
+    }
+}
+
 /* For screens larger than mobile but up to smaller tablets */
 @media screen and (min-width: 577px) and (max-width: 768px) {
     iframe {
