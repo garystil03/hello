@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden; /* Added to prevent scrolling */
+    background-color: white;
 }
 
 /* Container Styles */
