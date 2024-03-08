@@ -27,6 +27,7 @@ iframe {
     object-fit: contain; /* Ensure the iframe content fits within the container without distortion */
     vertical-align: top; /* Align the content of the iframe to the top of the container */
     background-color: white;
+    max-width: 100%;
 }
 
 /* Responsive Styles */
