@@ -49,7 +49,7 @@ iframe {
 /* For screens larger than smaller tablets but up to iPad Pro resolution */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
     iframe {
-        max-height: 100%;
+        max-height: 100vh;
         max-width: 90%; /* Reduce the width at larger screen sizes */
     }
 }
@@ -57,7 +57,7 @@ iframe {
 /* For screens larger than iPad Pro but up to larger resolutions */
 @media screen and (min-width: 1367px) {
     iframe {
-        max-height: 100%;
+        max-height: 100vh;
         max-width: 70%; /* Further reduce the width at larger screen sizes */
     }
 }
