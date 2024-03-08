@@ -14,7 +14,7 @@ html, body {
     align-items: flex-start; /* Align to the top edge vertically */
     justify-content: center; /* Center horizontally */
     position: relative;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
     background-color: white;
 }
 
