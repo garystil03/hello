@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Added to prevent scrolling */
+    overflow: visible; /* Added to prevent scrolling */
 }
 
 /* Container Styles */
