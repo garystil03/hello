@@ -1,10 +1,9 @@
-/* CSS inside the iframe document */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ensure full height */
-    margin: 0; /* Remove default margin */
+/* Reset CSS */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: 100%; /* Set body height to 100% */
 }
 
 /* Container Styles */
