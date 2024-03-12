@@ -33,7 +33,7 @@ iframe {
 @media screen and (max-width: 576px) {
     /* Add specific styles for mobile screens */
     .container {
-        /* Example: Add responsive styles for mobile screens */
+        padding: 10px; /* Example: Add padding for mobile screens */
     }
 }
 
@@ -41,7 +41,7 @@ iframe {
 @media screen and (min-width: 577px) and (max-width: 768px) {
     /* Add specific styles for smaller tablets */
     .container {
-        /* Example: Add responsive styles for smaller tablets */
+        padding: 20px; /* Example: Adjust padding for smaller tablets */
     }
 }
 
@@ -49,7 +49,7 @@ iframe {
 @media screen and (min-width: 769px) and (max-width: 1366px) {
     /* Add specific styles for iPad Pro and similar resolutions */
     .container {
-        /* Example: Add responsive styles for iPad Pro */
+        padding: 30px; /* Example: Adjust padding for iPad Pro */
     }
 }
 
@@ -57,6 +57,6 @@ iframe {
 @media screen and (min-width: 1367px) {
     /* Add specific styles for larger resolutions */
     .container {
-        /* Example: Add responsive styles for larger resolutions */
+        padding: 40px; /* Example: Adjust padding for larger resolutions */
     }
 }
