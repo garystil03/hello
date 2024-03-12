@@ -11,7 +11,7 @@ html, body {
     width: 100%; /* 100% width by default */
     height: 100vh; /* 100% of viewport height */
     display: flex;
-    align-items: stretch; /* Stretch the container vertically */
+    align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
     position: relative;
     background-color: white;
@@ -59,6 +59,6 @@ iframe {
 @media screen and (min-width: 1025px) {
     .container {
         /* Example: Adjust width for larger screens */
-        width: 60%; /* Example: 70% width for larger screens */
+        width: 70%; /* Example: 70% width for larger screens */
     }
 }
