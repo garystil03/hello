@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: white;
-    overflow: auto; /* Enable scrolling for the entire page */
+    height: 100%; /* Set body height to 100% */
 }
 
 /* Container Styles */
@@ -11,12 +11,11 @@ html, body {
     width: 100vw; /* 100% of viewport width */
     height: 100vh; /* 100% of viewport height */
     display: flex;
-    align-items: flex-start; /* Align to the top edge vertically */
+    align-items: stretch; /* Stretch the container vertically */
     justify-content: center; /* Center horizontally */
     position: relative;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     background-color: white;
-    overflow: auto; /* Enable scrolling within the container */
 }
 
 /* Iframe Styles */
@@ -24,41 +23,8 @@ iframe {
     width: 100%;
     height: 100%;
     border: none; /* Remove iframe border */
-    object-fit: contain; /* Ensure the iframe content fits within the container without distortion */
-    vertical-align: top; /* Align the content of the iframe to the top of the container */
     background-color: white;
     max-width: 100%;
+    max-height: 100%; /* Ensure the iframe doesn't exceed the container's height */
     overflow: auto; /* Enable scrolling within the iframe if necessary */
-}
-
-/* Responsive Styles */
-/* For screens up to mobile size */
-@media screen and (max-width: 576px) {
-    iframe {
-        max-height: 60vh; /* Adjust as needed */
-    }
-}
-
-/* For screens larger than mobile but up to smaller tablets */
-@media screen and (min-width: 577px) and (max-width: 768px) {
-    iframe {
-        max-height: 70vh; /* Adjust as needed */
-        max-width: 90%;
-    }
-}
-
-/* For screens larger than smaller tablets but up to iPad Pro resolution */
-@media screen and (min-width: 769px) and (max-width: 1366px) {
-    iframe {
-        max-height: 90vh; /* Adjust as needed */
-        max-width: 80%; /* Reduce the width at larger screen sizes */
-    }
-}
-
-/* For screens larger than iPad Pro but up to larger resolutions */
-@media screen and (min-width: 1367px) {
-    iframe {
-        max-height: 80vh; /* Adjust as needed */
-        max-width: 80%; /* Further reduce the width at larger screen sizes */
-    }
 }
