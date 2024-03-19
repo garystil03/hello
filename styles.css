@@ -26,43 +26,78 @@ iframe {
 
 /* Media Queries */
 /* Apply specific CSS rules based on screen width */
-@media screen and (max-width: 480px) {
-    /* Styles for extra small screens (e.g., smartphones) */
-    .container {
-        padding: 5px; /* Adjust padding as needed */
-    }
-    iframe {
-        width: 85%; /* Adjust width as needed */
+
+@viewport {
+    width: device-width;
+    height: 1000px;
+    min-zoom: 0.47;
+    max-zoom: 1;
+    zoom: 0.47;
+}
+
+@media (max-width: 575px) {
+    @viewport {
+        width: 375px;
+        min-zoom: 0.47;
+        max-zoom: 1;
+        zoom: 0.47;
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    /* Styles for small screens (e.g., smartphones, small tablets) */
-    iframe {
-        width: 85%;
+@media (min-width: 576px) and (max-width: 767px) {
+    @viewport {
+        width: 597px;
+        min-zoom: 0.72;
+        max-zoom: 1;
+        zoom: 0.72;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Styles for medium screens (e.g., tablets, laptops) */
-    iframe {
-        width: 75%;
+@media (min-width: 768px) and (max-width: 991px) {
+    @viewport {
+        width: 768px;
+        min-zoom: 0.65;
+        max-zoom: 1;
+        zoom: 0.65;
     }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-    /* Styles for large screens (e.g., desktops) */
-    iframe {
-        width: 65%;
+@media (min-width: 992px) and (max-width: 1199px) {
+    @viewport {
+        width: 992px;
+        min-zoom: 0.52;
+        max-zoom: 1;
+        zoom: 0.52;
     }
 }
 
-@media screen and (min-width: 1441px) {
-    /* Styles for extra large screens */
-    iframe {
-        width: 65%;
+@media (min-width: 1200px) and (max-width: 1439px) {
+    @viewport {
+        width: 1200px;
+        min-zoom: 0.44;
+        max-zoom: 1;
+        zoom: 0.44;
     }
 }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    @viewport {
+        width: 1440px;
+        min-zoom: 0.37;
+        max-zoom: 1;
+        zoom: 0.37;
+    }
+}
+
+@media (min-width: 1920px) {
+    @viewport {
+        width: 1920px;
+        min-zoom: 0.30;
+        max-zoom: 1;
+        zoom: 0.30;
+    }
+}
+
 
 
 
