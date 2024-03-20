@@ -56,34 +56,34 @@ iframe {
 @media (min-width: 992px) and (max-width: 1199px) {
     @viewport {
         width: 992px;
-        zoom: 1.25;
+        zoom: 1.00;
     }
 }
 
 @media (min-width: 1200px) and (max-width: 1439px) {
     @viewport {
         width: 1200px;
-        zoom: 1.51;
+        zoom: 1.00;
     }
 }
 
 @media (min-width: 1440px) and (max-width: 1919px) {
     @viewport {
         width: 1440px;
-        zoom: 1.82;
+        zoom: 1.00;
     }
 }
 
 @media (min-width: 1920px) and (max-width: 2159px) {
     @viewport {
         width: 1920px;
-        zoom: 2.43;
+        zoom: 1.00;
     }
 }
 
 @media (min-width: 2160px) {
     @viewport {
         width: 2160px;
-        zoom: 2.73;
+        zoom: 1.00;
     }
 }
