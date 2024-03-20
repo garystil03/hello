@@ -31,7 +31,7 @@ iframe {
     width: device-width;
     height: 1000px;
     min-zoom: 0.47;
-    max-zoom: 1;
+    //max-zoom: 1;
     zoom: 0.47;
 }
 
@@ -39,7 +39,7 @@ iframe {
     @viewport {
         width: 375px;
         min-zoom: 0.47;
-        max-zoom: 1;
+        //max-zoom: 1;
         zoom: 0.47;
     }
 }
@@ -48,7 +48,7 @@ iframe {
     @viewport {
         width: 597px;
         min-zoom: 0.72;
-        max-zoom: 1;
+        //max-zoom: 1;
         zoom: 0.72;
     }
 }
@@ -57,7 +57,7 @@ iframe {
     @viewport {
         width: 768px;
         min-zoom: 0.65;
-        max-zoom: 1;
+        //max-zoom: 1;
         zoom: 0.65;
     }
 }
@@ -66,7 +66,7 @@ iframe {
     @viewport {
         width: 992px;
         min-zoom: 0.52;
-        max-zoom: 1;
+        //max-zoom: 1;
         zoom: 0.52;
     }
 }
@@ -75,7 +75,7 @@ iframe {
     @viewport {
         width: 1200px;
         min-zoom: 0.44;
-        max-zoom: 1;
+        //max-zoom: 1;
         zoom: 0.44;
     }
 }
@@ -84,7 +84,7 @@ iframe {
     @viewport {
         width: 1440px;
         min-zoom: 0.37;
-        max-zoom: 1;
+        //max-zoom: 1;
         zoom: 0.37;
     }
 }
@@ -93,7 +93,7 @@ iframe {
     @viewport {
         width: 1920px;
         min-zoom: 0.30;
-        max-zoom: 1;
+        //max-zoom: 1;
         zoom: 0.30;
     }
 }
