@@ -55,8 +55,8 @@ iframe {
 
 @media (min-width: 992px) and (max-width: 1199px) {
     @viewport {
-        width: 992px;
-        zoom: 1.00;
+         width: 200px;
+        zoom: 0.20;
     }
 }
 
