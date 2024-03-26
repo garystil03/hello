@@ -11,13 +11,13 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align to the top */
-    overflow: auto; /* Enable vertical scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Style the iframe */
 iframe {
-    width: 792px; /* Set width of PDF */
-    height: 4860px; /* Set height of PDF */
+    width: 100%; /* Fill container width */
+    height: 100%; /* Fill container height */
     border: none; /* Remove iframe border */
     margin: 0; /* Remove margin */
     padding: 0; /* Remove padding */
