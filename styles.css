@@ -8,17 +8,17 @@ body, html {
 /* Style the container */
 #pdf-container {
     width: 100vw; /* Full width of viewport */
-    height: 100%; /* Full height of viewport */
+    height: 100vh; /* Full height of viewport */
     overflow: auto; /* Enable vertical scrolling if necessary */
     display: flex;
-    align-items: flex-start; /* Align PDF to the top of the screen */
+    align-items: center; /* Center PDF vertically */
     justify-content: center; /* Center the PDF horizontally */
 }
 
 /* Style the embedded PDF */
 embed {
-    width: 100%;
-    height: auto; /* Allow height to adjust accordingly */
+    width: 100%; /* Fill container width */
+    height: 100%; /* Fill container height */
     object-fit: contain; /* Ensure content fits container without distortion */
 }
 
