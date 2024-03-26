@@ -8,7 +8,7 @@ body, html {
 /* Style the container */
 #pdf-container {
     width: 100vw; /* Full width of viewport */
-    height: 100vh; /* Full height of viewport */
+    height: 100%; /* Full height of viewport */
     overflow: auto; /* Enable vertical scrolling if necessary */
     display: flex;
     align-items: flex-start; /* Align PDF to the top of the screen */
