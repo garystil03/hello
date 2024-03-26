@@ -12,7 +12,6 @@ body, html {
     max-height: 100vh; /* Full height of viewport */
     display: flex;
     justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
     overflow-y: auto; /* Enable vertical scrolling if necessary */
 }
 
