@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>astrolabes for use on mercury ...</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PDF Rendering with Optimized Settings</title>
+    <style>
+        /* Style adjustments can be made here */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            display: block;
+            margin: auto;
+            border: 1px solid black; /* Optional border for visualization */
+        }
+    </style>
 </head>
 <body>
     <!-- Create a container for the canvas -->
@@ -17,7 +28,7 @@
         function loadPdf(url) {
             // Fetch the PDF document
             pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-                // Load only the first page
+                // Load the first (and only) page
                 pdfDoc.getPage(1).then(function(page) {
                     // Create a canvas element to render the PDF page
                     const canvas = document.createElement('canvas');
@@ -36,5 +47,22 @@
                     // Append the canvas to the body of the HTML document
                     document.body.appendChild(canvas);
 
-                    // Render the PDF page onto the canvas
-                    page.render({ canvasContext: context, viewport: viewport });
+                    // Render the PDF page onto the canvas with optimized settings
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport,
+                        // Set rendering options for optimization
+                        renderInteractiveForms: false, // Disable rendering interactive forms
+                        removePageBorders: true, // Remove page borders for a cleaner appearance
+                        imageLayer: true // Render images as separate layers for improved quality
+                    };
+                    page.render(renderContext);
+                });
+            });
+        }
+
+        // Call the loadPdf function with the URL of your PDF file
+        loadPdf('astrolabes-for-use-on-mercury.pdf');
+    </script>
+</body>
+</html>
