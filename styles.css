@@ -27,6 +27,7 @@ embed {
     border: none;
 }
 
+
 /* Media queries for various devices */
 @media screen and (max-width: 320px) { /* Small smartphones (e.g., iPhone SE) */
     embed {
