@@ -22,12 +22,21 @@ body, html {
 
 /* Style the iframe */
 iframe {
-    width: 100%; /* Fill container width */
-    height: 100%; /* Fill container height */
-    border: none; /* Remove iframe border */
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
-    background: none; /* Remove background */
-    outline: none; /* Remove outline */
-    align: center;
+      position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+  /*  width: 100%; /* Fill container width */
+   /* height: 100%; /* Fill container height */
+  /*  border: none; /* Remove iframe border */
+   /* margin: 0; /* Remove margin */
+    /*padding: 0; /* Remove padding */
+   /* background: none; /* Remove background */
+   /* outline: none; /* Remove outline */
+    /*align: center;*/
 }
