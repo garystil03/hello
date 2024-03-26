@@ -2,6 +2,7 @@
 body, html {
     margin: 0;
     padding: 0;
+    align: center;
 }
 
 /* Style the container for the PDF */
@@ -11,6 +12,7 @@ body, html {
     display: flex;
     justify-content: center;
     overflow-y: auto; /* Enable vertical scrolling */
+    align: center;
 }
 
 /* Style the iframe */
