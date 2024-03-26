@@ -4,37 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>astrolabes for use on mars ...</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css"> <!-- Minified and compressed CSS -->
+    <style>
+        /* Additional styles to fit PDF dimensions */
+        .pdf-container {
+            width: 100%; /* Set width to fill the screen */
+            max-width: 792px; /* Limit width for readability */
+            height: 4869px; /* Set height to match document height */
+            overflow-y: auto; /* Enable vertical scrolling if needed */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        .pdf-container canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <div id="pdf-container" class="pdf-container"></div>
 
-    <!-- Include PDF.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <!-- Asynchronously load PDF.js library -->
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
         // Function to initialize PDF.js and load the PDF file
         function loadPdf(url) {
-            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-                const numPages = pdfDoc.numPages;
-                const pdfContainer = document.getElementById('pdf-container');
+            // Asynchronous loading of PDF.js
+            import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js').then(pdfjsLib => {
+                pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+                    const pdfContainer = document.getElementById('pdf-container');
 
-                for (let pageNum = 1; pageNum <= numPages; pageNum++) {
-                    const pageContainer = document.createElement('div');
-                    pageContainer.className = 'page-container';
-                    pdfContainer.appendChild(pageContainer);
-
-                    pdfDoc.getPage(pageNum).then(function(page) {
+                    // Rendering the single page
+                    pdfDoc.getPage(1).then(function(page) {
                         const canvas = document.createElement('canvas');
                         const context = canvas.getContext('2d');
                         const viewport = page.getViewport({ scale: 1 });
                         canvas.width = viewport.width;
                         canvas.height = viewport.height;
-                        pageContainer.appendChild(canvas);
+                        pdfContainer.appendChild(canvas);
                         page.render({ canvasContext: context, viewport: viewport });
                     });
-                }
-            }).catch(function(error) {
-                console.error('Error loading PDF:', error);
+                }).catch(function(error) {
+                    console.error('Error loading PDF:', error);
+                });
             });
         }
 
