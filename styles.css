@@ -1,36 +1,94 @@
-/* Apply border-box box model to specific elements */
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
+/* Reset default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Hide default body scrolling */
 }
 
-/* Default styles */
-.pdf-container {
+/* Style the container */
+#pdf-container {
+    width: 100%; /* Full width */
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align with top of the screen */
 }
 
-.page-container {
-    max-width: 80%; /* Adjust as needed */
-    width: 100%;
+/* Style the embedded PDF */
+embed {
+    width: 100%; /* Stretch across full width */
+    height: 4869px; /* Set PDF height */
+    display: block; /* Ensure block level display */
+    margin: 0;
+    padding: 0;
+    border: none; /* Remove border */
 }
 
-canvas {
-    width: 100%;
-    height: auto;
-}
-
-/* Media queries for responsive design */
-@media screen and (max-width: 768px) {
-    .page-container {
-        max-width: 90%; /* Adjust as needed */
+/* Media queries for various devices */
+@media screen and (max-width: 320px) { /* Small smartphones (e.g., iPhone SE) */
+    embed {
+        height: auto; /* Auto height */
     }
 }
 
-@media screen and (min-width: 1600px) {
-    .page-container {
-        max-width: 70%; /* Adjust as needed */
+@media screen and (min-width: 321px) and (max-width: 375px) { /* Medium smartphones (e.g., iPhone 6/7/8) */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) { /* Large smartphones (e.g., iPhone 6/7/8 Plus) */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 415px) and (max-width: 768px) { /* Tablets (e.g., iPad) */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) { /* Small laptops and tablets */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) { /* Medium laptops and desktops */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1440px) { /* Large desktops */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1680px) { /* Larger desktops */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 1681px) and (max-width: 1920px) { /* Large desktops */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) { /* Larger desktops */
+    embed {
+        height: auto; /* Auto height */
+    }
+}
+
+@media screen and (min-width: 2561px) { /* Extra-large desktops */
+    embed {
+        height: auto; /* Auto height */
     }
 }
