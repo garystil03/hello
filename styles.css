@@ -2,28 +2,26 @@
 body, html {
     margin: 0;
     padding: 0;
-    align: center;
+    height: 100%; /* Ensure full height */
 }
 
 /* Style the container for the PDF */
 #pdf-container {
-    width: 100%;
-    height: 100vh;
+    width: 100vw; /* Extend across full horizontal width of the screen */
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* Align to the top of the screen */
     overflow-y: auto; /* Enable vertical scrolling */
-    align: center;
-    align-items: center;
 }
 
 /* Style the iframe */
 iframe {
-width: 100%; /* Fill container width */
-   height: 100%; /* Fill container height */
- border: none; /* Remove iframe border */
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
- background: none; /* Remove background */
- outline: none; /* Remove outline */
-   align: center;*/
+    width: 100%; /* Fill container width */
+    height: calc(100vw / 1.414); /* Calculate height based on width (proportional to aspect ratio) */
+    border: none; /* Remove iframe border */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    background: none; /* Remove background */
+    outline: none; /* Remove outline */
 }
