@@ -13,6 +13,7 @@ body, html {
     justify-content: center;
     overflow-y: auto; /* Enable vertical scrolling */
     align: center;
+    align-items: center;
 }
 
 /* Style the iframe */
@@ -25,9 +26,4 @@ iframe {
     background: none; /* Remove background */
     outline: none; /* Remove outline */
     align: center;
-
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
 }
