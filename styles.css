@@ -17,10 +17,53 @@ body, html {
 /* Style the iframe */
 iframe {
     width: 100%; /* Fill container width */
-    height: 100%; /* Fill container height */
+    height: auto; /* Fill container height */
     border: none; /* Remove iframe border */
     margin: 0; /* Remove margin */
     padding: 0; /* Remove padding */
     background: none; /* Remove background */
     outline: none; /* Remove outline */
+}
+
+/* Media queries for various screen sizes */
+@media screen and (max-width: 320px) { /* iPhone SE */
+    #pdf-container {
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) { /* iPhones (except SE) */
+    #pdf-container {
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) { /* Larger iPhones and Android devices */
+    #pdf-container {
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+@media screen and (min-width: 415px) and (max-width: 768px) { /* iPads (portrait) */
+    #pdf-container {
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) { /* iPads (landscape) */
+    #pdf-container {
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) { /* Small laptops and desktops */
+    #pdf-container {
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+@media screen and (min-width: 1201px) { /* Larger desktops */
+    #pdf-container {
+        justify-content: center; /* Center horizontally */
+    }
 }
