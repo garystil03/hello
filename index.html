@@ -61,7 +61,11 @@
                         removePageBorders: true, // Remove page borders for a cleaner appearance
                         imageLayer: true // Render images as separate layers for improved quality
                     };
-                    page.render(renderContext);
+                    page.render(renderContext).promise.then(function() {
+                        console.log('PDF rendered successfully.');
+                    }).catch(function(reason) {
+                        console.error('Error rendering PDF: ', reason);
+                    });
                 });
             }).catch(function(reason) {
                 console.error('Error loading PDF: ', reason);
