@@ -1,89 +1,90 @@
-/* Reset CSS */
+/* Apply border-box box model to all elements */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Container Styles */
-.container {
+/* Default styles */
+.pdf-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: hidden; /* Ensure horizontal overflow is hidden */
+}
+
+.page-container {
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: white; /* Set the background color as desired */
+    margin-bottom: 20px; /* Add some bottom margin between pages */
 }
 
-/* Iframe Styles */
-iframe {
-    width: 100%; /* Adjust width to fill the container */
-    height: 100%; /* Adjust height to fill the container */
-    border: none;
-    vertical-align: top; /* Align iframe content to the top */
+canvas {
+    width: auto; /* Let the canvas adjust its width according to its parent */
+    height: auto; /* Let the canvas adjust its height according to its parent */
+    max-width: 100%; /* Ensure the canvas doesn't exceed its container's width */
+    max-height: 100vh; /* Limit canvas height to viewport height */
 }
 
-/* Media Queries */
-/* Apply specific CSS rules based on screen width */
-
-@viewport {
-    width: 792px; /* Set viewport width to match PDF width */
-    height: 4870px; /* Set viewport height to match PDF height */
-    zoom: 1; /* Set initial zoom to 1 */
-}
-
-@media (max-width: 575px) {
-    @viewport {
-        width: 375px;
-        zoom: 0.47; /* Adjust zoom factor for smaller screens */
+/* Media queries for iPhones and iPads */
+@media screen and (max-width: 320px) and (min-resolution: 192dpi), (max-width: 320px) and (min-resolution: 2dppx) { /* iPhone SE */
+    .page-container {
+        max-width: 90%;
     }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
-    @viewport {
-        width: 597px;
-        zoom: 0.75;
+@media screen and (min-width: 321px) and (max-width: 375px) and (min-resolution: 192dpi), (min-width: 321px) and (max-width: 375px) and (min-resolution: 2dppx) { /* iPhones (excluding Pro models) */
+    .page-container {
+        max-width: 90%;
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    @viewport {
-        width: 200px;
-        zoom: 0.20;
+@media screen and (min-width: 376px) and (max-width: 414px) and (min-resolution: 192dpi), (min-width: 376px) and (max-width: 414px) and (min-resolution: 2dppx) { /* iPhones Pro */
+    .page-container {
+        max-width: 85%;
     }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    @viewport {
-         width: 200px;
-        zoom: 0.20;
+@media screen and (min-width: 414px) and (max-width: 768px) and (min-resolution: 192dpi), (min-width: 414px) and (max-width: 768px) and (min-resolution: 2dppx) { /* iPads (including Mini) */
+    .page-container {
+        max-width: 80%;
     }
 }
 
-@media (min-width: 1200px) and (max-width: 1439px) {
-    @viewport {
-        width: 200px;
-        zoom: 0.20;
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-resolution: 192dpi), (min-width: 768px) and (max-width: 1024px) and (min-resolution: 2dppx) { /* iPads Pro */
+    .page-container {
+        max-width: 80%;
     }
 }
 
-@media (min-width: 1440px) and (max-width: 1919px) {
-    @viewport {
-         width: 200px;
-        zoom: 0.20;
+/* Media queries for larger screen sizes */
+@media screen and (min-width: 1025px) and (max-width: 1112px) and (min-resolution: 192dpi), (min-width: 1025px) and (max-width: 1112px) and (min-resolution: 2dppx) { /* Laptops */
+    .page-container {
+        max-width: 80%;
     }
 }
 
-@media (min-width: 1920px) and (max-width: 2159px) {
-    @viewport {
-        width: 1920px;
-        zoom: 1.00;
+@media screen and (min-width: 1113px) and (max-width: 1366px) and (min-resolution: 192dpi), (min-width: 1113px) and (max-width: 1366px) and (min-resolution: 2dppx) { /* Larger laptops and smaller desktops */
+    .page-container {
+        max-width: 80%;
     }
 }
 
-@media (min-width: 2160px) {
-    @viewport {
-        width: 2160px;
-        zoom: 1.00;
+@media screen and (min-width: 1367px) and (max-width: 1440px) and (min-resolution: 192dpi), (min-width: 1367px) and (max-width: 1440px) and (min-resolution: 2dppx) { /* Medium-sized desktops */
+    .page-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1600px) and (min-resolution: 192dpi), (min-width: 1441px) and (max-width: 1600px) and (min-resolution: 2dppx) { /* Larger desktops */
+    .page-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1601px) and (min-resolution: 192dpi), (min-width: 1601px) and (min-resolution: 2dppx) { /* Extra-large desktops */
+    .page-container {
+        max-width: 80%;
     }
 }
