@@ -37,24 +37,24 @@ embed {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) { /* Medium devices (tablets, 769px to 1024px) */
     embed {
-        width: 70%; /* Adjust width percentage for medium devices */
+        width: 80%; /* Adjust width percentage for medium devices */
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) { /* Large devices (desktops, 1025px to 1200px) */
     embed {
-        width: 60%; /* Adjust width percentage for large devices */
+        width: 80%; /* Adjust width percentage for large devices */
     }
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1400px) { /* Larger devices (desktops, 1201px to 1400px) */
     embed {
-        width: 50%; /* Adjust width percentage for larger devices */
+        width: 80%; /* Adjust width percentage for larger devices */
     }
 }
 
 @media screen and (min-width: 1401px) { /* Extra large devices (desktops, 1401px and up) */
     embed {
-        width: 40%; /* Adjust width percentage for extra large devices */
+        width: 70%; /* Adjust width percentage for extra large devices */
     }
 }
