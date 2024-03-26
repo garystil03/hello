@@ -18,9 +18,9 @@ body, html {
 
 /* Style the embedded PDF */
 embed {
-    width: auto;
+    width: 100%; /* Fill the container's width */
     height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: none; /* Remove the maximum width constraint */
+    max-height: 100%; /* Ensure the PDF fits within the container vertically */
     object-fit: contain;
 }
