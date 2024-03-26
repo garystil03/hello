@@ -12,96 +12,99 @@
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: flex-start; /* Align content to the top */
-}
-
-.page-container {
-    width: 100%; /* Occupy full width of its parent */
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px; /* Add some bottom margin between pages */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
 }
 
 canvas {
     width: 100%; /* Occupy full width of its parent */
     height: auto; /* Let the canvas adjust its height according to its parent */
     max-width: 792px; /* Set maximum width to match the original width of the PDF */
+    border: none; /* Remove border */
 }
 
 /* Media queries for different screen sizes */
 
 /* iPhone SE and similar small screens */
 @media screen and (max-width: 320px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%; /* Adjust maximum width for better display on smaller screens */
     }
 }
 
 /* iPhone 6/7/8 and similar */
 @media screen and (min-width: 321px) and (max-width: 375px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
 
 /* iPhone 6/7/8 Plus and similar */
 @media screen and (min-width: 376px) and (max-width: 414px) {
-    .page-container {
+    .pdf-container {
         max-width: 85%;
     }
 }
 
 /* iPhone X/XS/11 Pro and similar */
 @media screen and (min-width: 375px) and (max-width: 812px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
 
 /* iPhone XR/XS Max/11/11 Pro Max and similar */
 @media screen and (min-width: 414px) and (max-width: 896px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
 
 /* iPad Mini, Air, 9.7-inch */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
 
 /* iPad 10.2-inch */
 @media screen and (min-width: 810px) and (max-width: 834px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
 
 /* iPad Pro 11-inch */
 @media screen and (min-width: 834px) and (max-width: 1024px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
 
 /* iPad Pro 12.9-inch */
 @media screen and (min-width: 1024px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
 
 /* Small laptops and larger tablets */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    .page-container {
+    .pdf-container {
         max-width: 60%; /* Adjust maximum width for larger tablets */
     }
 }
 
 /* Larger laptops and desktops */
 @media screen and (min-width: 1367px) {
-    .page-container {
+    .pdf-container {
         max-width: 50%; /* Adjust maximum width for larger screens */
+    }
+}
+
+/* Large desktops and widescreen monitors */
+@media screen and (min-width: 1600px) {
+    .pdf-container {
+        max-width: 40%; /* Adjust maximum width for large desktops */
     }
 }
