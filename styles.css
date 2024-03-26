@@ -27,63 +27,93 @@ canvas {
     max-height: 100vh; /* Limit canvas height to viewport height */
 }
 
-/* Media queries for iPhones and iPads */
-@media screen and (max-width: 320px) and (min-resolution: 192dpi), (max-width: 320px) and (min-resolution: 2dppx) { /* iPhone SE */
+/* Media queries for responsiveness */
+@media screen and (max-width: 320px) { /* Small mobile phones */
+    .page-container {
+        max-width: 95%;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) { /* Larger mobile phones */
     .page-container {
         max-width: 90%;
     }
 }
 
-@media screen and (min-width: 321px) and (max-width: 375px) and (min-resolution: 192dpi), (min-width: 321px) and (max-width: 375px) and (min-resolution: 2dppx) { /* iPhones (excluding Pro models) */
+@media screen and (min-width: 481px) and (max-width: 768px) { /* Tablets */
+    .page-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) { /* Small laptops and large tablets */
+    .page-container {
+        max-width: 75%;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) { /* Medium-sized laptops */
+    .page-container {
+        max-width: 70%;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) { /* Larger laptops and small desktops */
+    .page-container {
+        max-width: 65%;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1680px) { /* Medium-sized desktops */
+    .page-container {
+        max-width: 60%;
+    }
+}
+
+@media screen and (min-width: 1681px) and (max-width: 1920px) { /* Larger desktops */
+    .page-container {
+        max-width: 55%;
+    }
+}
+
+@media screen and (min-width: 1921px) { /* Extra-large desktops */
+    .page-container {
+        max-width: 50%;
+    }
+}
+
+/* Special settings for iPhones and iPads */
+@media screen and (max-width: 375px) and (max-height: 812px) { /* iPhone X, XS, 11 Pro, 12 Mini */
     .page-container {
         max-width: 90%;
     }
 }
 
-@media screen and (min-width: 376px) and (max-width: 414px) and (min-resolution: 192dpi), (min-width: 376px) and (max-width: 414px) and (min-resolution: 2dppx) { /* iPhones Pro */
+@media screen and (max-width: 414px) and (max-height: 896px) { /* iPhone XR, 11, 11 Pro Max, XS Max */
     .page-container {
-        max-width: 85%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 414px) and (max-width: 768px) and (min-resolution: 192dpi), (min-width: 414px) and (max-width: 768px) and (min-resolution: 2dppx) { /* iPads (including Mini) */
+@media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 12, 12 Pro */
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-resolution: 192dpi), (min-width: 768px) and (max-width: 1024px) and (min-resolution: 2dppx) { /* iPads Pro */
+@media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 3.5) { /* iPhone 12 Pro Max */
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-/* Additional media queries for larger screen sizes */
-@media screen and (min-width: 1025px) and (max-width: 1112px) and (min-resolution: 192dpi), (min-width: 1025px) and (max-width: 1112px) and (min-resolution: 2dppx) { /* Laptops */
-    .page-container {
-        max-width: 80%;
-    }
-}
-
-@media screen and (min-width: 1113px) and (max-width: 1366px) and (min-resolution: 192dpi), (min-width: 1113px) and (max-width: 1366px) and (min-resolution: 2dppx) { /* Larger laptops and smaller desktops */
+@media screen and (max-width: 768px) and (max-height: 1024px) { /* iPads (including Mini) */
     .page-container {
         max-width: 80%;
     }
 }
 
-@media screen and (min-width: 1367px) and (max-width: 1440px) and (min-resolution: 192dpi), (min-width: 1367px) and (max-width: 1440px) and (min-resolution: 2dppx) { /* Medium-sized desktops */
-    .page-container {
-        max-width: 80%;
-    }
-}
-
-@media screen and (min-width: 1441px) and (max-width: 1600px) and (min-resolution: 192dpi), (min-width: 1441px) and (max-width: 1600px) and (min-resolution: 2dppx) { /* Larger desktops */
-    .page-container {
-        max-width: 80%;
-    }
-}
-
-@media screen and (min-width: 1601px) and (min-resolution: 192dpi), (min-width: 1601px) and (min-resolution: 2dppx) { /* Extra-large desktops */
+@media screen and (max-width: 1024px) and (max-height: 1366px) { /* iPads Pro */
     .page-container {
         max-width: 80%;
     }
