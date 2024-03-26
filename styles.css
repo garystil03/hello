@@ -7,85 +7,102 @@
 
 /* Default styles */
 .pdf-container {
-    display: flex;
-    flex-direction: column; /* Stack pages vertically */
-    align-items: center; /* Center content horizontally */
     overflow-x: hidden; /* Ensure horizontal overflow is hidden */
     overflow-y: auto; /* Enable vertical scrolling */
     height: 100vh; /* Set container height to viewport height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align content to the top */
 }
 
 .page-container {
     width: 100%; /* Occupy full width of its parent */
+    max-width: 792px; /* Set maximum width to document's width */
     display: flex;
     justify-content: center;
     margin-bottom: 20px; /* Add some bottom margin between pages */
 }
 
 canvas {
-    width: auto; /* Let the canvas adjust its width according to its parent */
+    width: 100%; /* Occupy full width of its parent */
     height: auto; /* Let the canvas adjust its height according to its parent */
-    max-width: 100%; /* Ensure the canvas doesn't exceed its container's width */
 }
 
-/* Media queries for iPhones and iPads */
+/* Media queries for different screen sizes */
+
+/* iPhone SE and similar small screens */
 @media screen and (max-width: 320px) {
     .page-container {
         max-width: 90%; /* Adjust maximum width for better display on smaller screens */
     }
 }
 
+/* iPhone 6/7/8 and similar */
 @media screen and (min-width: 321px) and (max-width: 375px) {
     .page-container {
         max-width: 90%;
     }
 }
 
+/* iPhone 6/7/8 Plus and similar */
 @media screen and (min-width: 376px) and (max-width: 414px) {
     .page-container {
         max-width: 85%;
     }
 }
 
-@media screen and (min-width: 415px) and (max-width: 768px) {
+/* iPhone X/XS/11 Pro and similar */
+@media screen and (min-width: 375px) and (max-width: 812px) {
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+/* iPhone XR/XS Max/11/11 Pro Max and similar */
+@media screen and (min-width: 414px) and (max-width: 896px) {
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-/* Media queries for larger screen sizes */
-@media screen and (min-width: 1025px) and (max-width: 1112px) {
+/* iPad Mini, Air, 9.7-inch */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 1113px) and (max-width: 1366px) {
+/* iPad 10.2-inch */
+@media screen and (min-width: 810px) and (max-width: 834px) {
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 1367px) and (max-width: 1440px) {
+/* iPad Pro 11-inch */
+@media screen and (min-width: 834px) and (max-width: 1024px) {
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 1441px) and (max-width: 1600px) {
+/* iPad Pro 12.9-inch */
+@media screen and (min-width: 1024px) {
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 1601px) {
+/* Small laptops and larger tablets */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
     .page-container {
-        max-width: 80%;
+        max-width: 90%;
+    }
+}
+
+/* Larger laptops and desktops */
+@media screen and (min-width: 1367px) {
+    .page-container {
+        max-width: 90%;
     }
 }
