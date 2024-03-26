@@ -23,8 +23,13 @@
                     const canvas = document.createElement('canvas');
                     const context = canvas.getContext('2d');
 
+                    // Determine the scale factor based on device pixel ratio
+                    const scale = window.devicePixelRatio || 1;
+
+                    // Set the scale factor for rendering
+                    const viewport = page.getViewport({ scale: scale });
+
                     // Set the canvas dimensions to match the PDF page
-                    const viewport = page.getViewport({ scale: 1 });
                     canvas.width = viewport.width;
                     canvas.height = viewport.height;
 
@@ -33,12 +38,3 @@
 
                     // Render the PDF page onto the canvas
                     page.render({ canvasContext: context, viewport: viewport });
-                });
-            });
-        }
-
-        // Call the loadPdf function with the URL of your PDF file
-        loadPdf('poster.pdf');
-    </script>
-</body>
-</html>
