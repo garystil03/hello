@@ -96,13 +96,13 @@ canvas {
 /* Small laptops and larger tablets */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
     .page-container {
-        max-width: 90%;
+        max-width: 95%; /* Adjust maximum width for laptops */
     }
 }
 
 /* Larger laptops and desktops */
 @media screen and (min-width: 1367px) {
     .page-container {
-        max-width: 90%;
+        max-width: 95%; /* Adjust maximum width for larger screens */
     }
 }
