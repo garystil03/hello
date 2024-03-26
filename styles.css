@@ -23,10 +23,8 @@
 
 canvas {
     /* Preserve original resolution */
-    image-rendering: pixelated; /* Ensure pixelated rendering */
-    image-rendering: crisp-edges;
     width: 792px; /* Set original width */
-    height: auto; /* Let the canvas adjust its height according to its parent */
+    height: 4869px; /* Set original height */
     max-width: 100%; /* Ensure the canvas doesn't exceed its container's width */
 }
 
