@@ -54,30 +54,42 @@ canvas {
 
 @media screen and (min-width: 1025px) and (max-width: 1366px) { /* MacBook Air and similar screens */
     .page-container {
-        max-width: 65%;
+        max-width: 70%; /* Adjusted for MacBook Air */
     }
 }
 
 @media screen and (min-width: 1367px) and (max-width: 1440px) { /* Larger laptops and small desktops */
     .page-container {
-        max-width: 60%;
+        max-width: 65%;
     }
 }
 
 @media screen and (min-width: 1441px) and (max-width: 1680px) { /* Medium-sized desktops */
     .page-container {
-        max-width: 55%;
+        max-width: 60%;
     }
 }
 
 @media screen and (min-width: 1681px) and (max-width: 1920px) { /* Larger desktops */
     .page-container {
-        max-width: 50%;
+        max-width: 55%;
     }
 }
 
 @media screen and (min-width: 1921px) { /* Extra-large desktops */
     .page-container {
-        max-width: 45%;
+        max-width: 50%;
+    }
+}
+
+/* Media query for high-resolution screens */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+    .page-container {
+        max-width: 70%; /* Example adjustment for high-resolution screens */
     }
 }
