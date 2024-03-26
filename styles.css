@@ -95,13 +95,13 @@ canvas {
 /* Small laptops and larger tablets */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
     .page-container {
-        max-width: 792px; /* Keep original width for laptops and tablets */
+        max-width: 60%; /* Adjust maximum width for larger tablets */
     }
 }
 
 /* Larger laptops and desktops */
 @media screen and (min-width: 1367px) {
     .page-container {
-        max-width: 792px; /* Keep original width for larger screens */
+        max-width: 50%; /* Adjust maximum width for larger screens */
     }
 }
