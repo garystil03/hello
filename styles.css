@@ -21,49 +21,77 @@ iframe {
     border: none; /* Remove iframe border */
     margin: 0; /* Remove margin */
     padding: 0; /* Remove padding */
-    background: none; /* Remove background */
-    outline: none; /* Remove outline */
 }
 
 /* Media queries for various screen sizes */
 @media screen and (max-width: 320px) { /* iPhone SE */
     #pdf-container {
-        justify-content: center; /* Center horizontally */
+        width: 100%;
     }
 }
 
-@media screen and (min-width: 321px) and (max-width: 375px) { /* iPhones (except SE) */
+@media screen and (min-width: 321px) and (max-width: 375px) { /* iPhone 6/7/8/SE */
     #pdf-container {
-        justify-content: center; /* Center horizontally */
+        width: 95%;
     }
 }
 
-@media screen and (min-width: 376px) and (max-width: 414px) { /* Larger iPhones and Android devices */
+@media screen and (min-width: 376px) and (max-width: 414px) { /* iPhone 6/7/8 Plus */
     #pdf-container {
-        justify-content: center; /* Center horizontally */
+        width: 90%;
     }
 }
 
-@media screen and (min-width: 415px) and (max-width: 768px) { /* iPads (portrait) */
+@media screen and (min-width: 415px) and (max-width: 768px) { /* iPad */
     #pdf-container {
-        justify-content: center; /* Center horizontally */
+        width: 85%;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) { /* iPads (landscape) */
+@media screen and (min-width: 769px) and (max-width: 1024px) { /* iPad Pro */
     #pdf-container {
-        justify-content: center; /* Center horizontally */
+        width: 80%;
     }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1200px) { /* Small laptops and desktops */
+@media screen and (min-width: 1025px) and (max-width: 1200px) { /* Medium laptops */
     #pdf-container {
-        justify-content: center; /* Center horizontally */
+        width: 75%;
     }
 }
 
-@media screen and (min-width: 1201px) { /* Larger desktops */
+@media screen and (min-width: 1201px) and (max-width: 1366px) { /* Large laptops */
     #pdf-container {
-        justify-content: center; /* Center horizontally */
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1440px) { /* Larger screens */
+    #pdf-container {
+        width: 65%;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1600px) { /* Extra large screens */
+    #pdf-container {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1920px) { /* Desktops */
+    #pdf-container {
+        width: 55%;
+    }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) { /* Large desktops */
+    #pdf-container {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 2561px) { /* Extra large desktops */
+    #pdf-container {
+        width: 45%;
     }
 }
