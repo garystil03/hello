@@ -10,6 +10,7 @@ body, html {
     width: 100vw; /* Full width of viewport */
     height: 100vh; /* Full height of viewport */
     overflow-x: hidden; /* Hide horizontal overflow */
+    padding: 0; /* Set padding to 0 */
 }
 
 /* Style the embedded PDF */
@@ -21,27 +22,71 @@ embed {
 
 /* Media queries for various screen sizes */
 @media screen and (max-width: 320px) { /* Extra small devices (phones, 320px and down) */
-    #pdf-container {
-        padding: 5px; /* Add padding to accommodate the PDF dimensions */
+    embed {
+        width: 90%; /* Adjust width percentage for smaller devices */
+        height: auto; /* Allow height to adjust accordingly */
     }
 }
 
 @media screen and (min-width: 321px) and (max-width: 480px) { /* Small devices (phones, 321px to 480px) */
-    #pdf-container {
-        padding: 10px; /* Add padding to accommodate the PDF dimensions */
+    embed {
+        width: 80%; /* Adjust width percentage for small devices */
+        height: auto; /* Allow height to adjust accordingly */
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) { /* Medium devices (tablets, 481px to 768px) */
-    #pdf-container {
-        padding: 15px; /* Add padding to accommodate the PDF dimensions */
+@media screen and (min-width: 481px) and (max-width: 600px) { /* Extra small devices (phones, 481px to 600px) */
+    embed {
+        width: 70%; /* Adjust width percentage for smaller devices */
+        height: auto; /* Allow height to adjust accordingly */
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) { /* Large devices (tablets/desktops, 769px to 1024px) */
-    #pdf-container {
-        padding: 20px; /* Add padding to accommodate the PDF dimensions */
+@media screen and (min-width: 601px) and (max-width: 768px) { /* Medium devices (tablets, 601px to 768px) */
+    embed {
+        width: 60%; /* Adjust width percentage for medium devices */
+        height: auto; /* Allow height to adjust accordingly */
     }
 }
 
-/* Add more media queries as needed for additional screen sizes */
+@media screen and (min-width: 769px) and (max-width: 900px) { /* Medium devices (tablets, 769px to 900px) */
+    embed {
+        width: 50%; /* Adjust width percentage for medium devices */
+        height: auto; /* Allow height to adjust accordingly */
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024px) { /* Large devices (tablets/desktops, 901px to 1024px) */
+    embed {
+        width: 40%; /* Adjust width percentage for large devices */
+        height: auto; /* Allow height to adjust accordingly */
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) { /* Large devices (tablets/desktops, 1025px to 1200px) */
+    embed {
+        width: 30%; /* Adjust width percentage for large devices */
+        height: auto; /* Allow height to adjust accordingly */
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) { /* Extra large devices (desktops, 1201px to 1400px) */
+    embed {
+        width: 25%; /* Adjust width percentage for extra large devices */
+        height: auto; /* Allow height to adjust accordingly */
+    }
+}
+
+@media screen and (min-width: 1401px) and (max-width: 1600px) { /* Extra large devices (desktops, 1401px to 1600px) */
+    embed {
+        width: 20%; /* Adjust width percentage for extra large devices */
+        height: auto; /* Allow height to adjust accordingly */
+    }
+}
+
+@media screen and (min-width: 1601px) { /* Extra large devices (desktops, 1601px and up) */
+    embed {
+        width: 15%; /* Adjust width percentage for extra large devices */
+        height: auto; /* Allow height to adjust accordingly */
+    }
+}
