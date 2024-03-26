@@ -22,4 +22,5 @@ iframe {
     padding: 0; /* Remove padding */
     background: none; /* Remove background */
     outline: none; /* Remove outline */
+    align: center;
 }
