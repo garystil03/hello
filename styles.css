@@ -11,7 +11,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align to the top */
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow: auto; /* Enable vertical scrolling */
 }
 
 /* Style the iframe */
