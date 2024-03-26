@@ -7,7 +7,6 @@
 
 /* Default styles */
 .pdf-container {
-    overflow-x: hidden; /* Ensure horizontal overflow is hidden */
     overflow-y: auto; /* Enable vertical scrolling */
     height: 100vh; /* Set container height to viewport height */
     display: flex;
@@ -17,15 +16,18 @@
 
 .page-container {
     width: 100%; /* Occupy full width of its parent */
-    max-width: 792px; /* Set maximum width to document's width */
     display: flex;
     justify-content: center;
     margin-bottom: 20px; /* Add some bottom margin between pages */
 }
 
 canvas {
-    width: 100%; /* Occupy full width of its parent */
+    /* Preserve original resolution */
+    image-rendering: pixelated; /* Ensure pixelated rendering */
+    image-rendering: crisp-edges;
+    width: 792px; /* Set original width */
     height: auto; /* Let the canvas adjust its height according to its parent */
+    max-width: 100%; /* Ensure the canvas doesn't exceed its container's width */
 }
 
 /* Media queries for different screen sizes */
@@ -96,13 +98,13 @@ canvas {
 /* Small laptops and larger tablets */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
     .page-container {
-        max-width: 95%; /* Adjust maximum width for laptops */
+        max-width: 792px; /* Keep original width for laptops and tablets */
     }
 }
 
 /* Larger laptops and desktops */
 @media screen and (min-width: 1367px) {
     .page-container {
-        max-width: 95%; /* Adjust maximum width for larger screens */
+        max-width: 792px; /* Keep original width for larger screens */
     }
 }
