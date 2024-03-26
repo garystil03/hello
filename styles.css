@@ -10,17 +10,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-x: hidden; /* Ensure horizontal overflow is hidden */
 }
 
 .page-container {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px; /* Add some bottom margin between pages */
 }
 
 canvas {
-    width: 100%;
-    height: auto;
+    width: auto; /* Let the canvas adjust its width according to its parent */
+    height: auto; /* Let the canvas adjust its height according to its parent */
+    max-width: 100%; /* Ensure the canvas doesn't exceed its container's width */
+    max-height: 100vh; /* Limit canvas height to viewport height */
 }
 
 /* Media queries for iPhones and iPads */
@@ -84,3 +88,4 @@ canvas {
         max-width: 80%;
     }
 }
+
