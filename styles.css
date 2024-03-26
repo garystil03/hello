@@ -22,10 +22,9 @@
 }
 
 canvas {
-    /* Preserve original resolution */
-    width: 792px; /* Set original width */
-    height: 4869px; /* Set original height */
-    max-width: 100%; /* Ensure the canvas doesn't exceed its container's width */
+    width: 100%; /* Occupy full width of its parent */
+    height: auto; /* Let the canvas adjust its height according to its parent */
+    max-width: 792px; /* Set maximum width to match the original width of the PDF */
 }
 
 /* Media queries for different screen sizes */
