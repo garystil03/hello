@@ -1,4 +1,4 @@
-* Apply border-box box model to all elements */
+/* Apply border-box box model to all elements */
 * {
     box-sizing: border-box;
     margin: 0;
