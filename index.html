@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Rendering with Optimized Settings</title>
+    <title>PDF Rendering with Full Width</title>
     <style>
         /* Style adjustments can be made here */
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent default body scrolling */
         }
-        #pdf-canvas-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        #pdf-container {
+            width: 100vw; /* Full horizontal width */
+            height: 100%;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         canvas {
-            max-width: 100%;
-            max-height: 100%;
+            display: block;
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <!-- Create a container for the canvas -->
-    <div id="pdf-canvas-container"></div>
+    <!-- Create a container for the PDF -->
+    <div id="pdf-container"></div>
 
     <!-- Specify the path to the PDF.js worker script -->
     <script>
         // Specify the path to the PDF.js worker script
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.6.172/pdf.min.js';
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
     </script>
 
     <!-- Include PDF.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.6.172/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
         // Function to initialize PDF.js and load the PDF file
         function loadPdf(url) {
@@ -52,33 +54,4 @@
                     const viewport = page.getViewport({ scale: scale });
 
                     // Set the canvas dimensions to match the PDF page
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
-
-                    // Append the canvas to the container
-                    document.getElementById('pdf-canvas-container').appendChild(canvas);
-
-                    // Render the PDF page onto the canvas with optimized settings
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport,
-                        // Set rendering options for optimization
-                        annotationMode: pdfjsLib.AnnotationMode.DISABLE, // Disable rendering interactive forms
-                        imageLayer: false // Disable rendering images as separate layers
-                    };
-                    page.render(renderContext).promise.then(function() {
-                        console.log('PDF rendered successfully.');
-                    }).catch(function(reason) {
-                        console.error('Error rendering PDF: ', reason);
-                    });
-                });
-            }).catch(function(reason) {
-                console.error('Error loading PDF: ', reason);
-            });
-        }
-
-        // Call the loadPdf function with the URL of your PDF file
-        loadPdf('poster.pdf');
-    </script>
-</body>
-</html>
+           
