@@ -14,6 +14,10 @@ body, html {
     overflow-y: auto; /* Enable vertical scrolling */
     align: center;
     align-items: center;
+    
+     width: 80%;
+  height: 80%;
+  position: relative;
 }
 
 /* Style the iframe */
