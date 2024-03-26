@@ -54,4 +54,30 @@
                     const viewport = page.getViewport({ scale: scale });
 
                     // Set the canvas dimensions to match the PDF page
-           
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+
+                    // Append the canvas to the container
+                    document.getElementById('pdf-container').appendChild(canvas);
+
+                    // Render the PDF page onto the canvas
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext).promise.then(function() {
+                        console.log('PDF rendered successfully.');
+                    }).catch(function(reason) {
+                        console.error('Error rendering PDF: ', reason);
+                    });
+                });
+            }).catch(function(reason) {
+                console.error('Error loading PDF: ', reason);
+            });
+        }
+
+        // Call the loadPdf function with the URL of your PDF file
+        loadPdf('poster.pdf');
+    </script>
+</body>
+</html>
