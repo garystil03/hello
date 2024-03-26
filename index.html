@@ -1,25 +1,59 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google Tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXBHGF3P8R"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DXBHGF3P8R');
-    </script>
-
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>astrolabes for use on Mercury, Venus, Mars ... and even Pluto</title>
+    <title>astrolabes for use on mars ...</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-<div class="container">
-<iframe src="poster.pdf" scrolling="no"></iframe>
+    <div id="pdf-container" class="pdf-container"></div>
 
-</div>
+    <!-- Include PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+        // Function to initialize PDF.js and load the PDF file
+        function loadPdf(url) {
+            // Fetch the PDF document
+            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+                // Get the number of pages in the PDF
+                const numPages = pdfDoc.numPages;
+
+                // Create a container for the PDF pages
+                const pdfContainer = document.getElementById('pdf-container');
+
+                // Loop through each page and render it
+                for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                    // Create a container for each page
+                    const pageContainer = document.createElement('div');
+                    pageContainer.className = 'page-container';
+
+                    // Append the page container to the PDF container
+                    pdfContainer.appendChild(pageContainer);
+
+                    // Render the PDF page onto the container
+                    pdfDoc.getPage(pageNum).then(function(page) {
+                        // Create a canvas element to render the PDF page
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+
+                        // Set the canvas dimensions to match the PDF page
+                        const viewport = page.getViewport({ scale: 1 });
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        // Append the canvas to the page container
+                        pageContainer.appendChild(canvas);
+
+                        // Render the PDF page onto the canvas
+                        page.render({ canvasContext: context, viewport: viewport });
+                    });
+                }
+            });
+        }
+
+        // Call the loadPdf function with the URL of your PDF file
+        loadPdf('poster.pdf');
+    </script>
 </body>
 </html>
-
