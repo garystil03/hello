@@ -7,20 +7,20 @@ body, html {
 
 /* Style the container for the PDF */
 #pdf-container {
-    width: 100vw; /* Extend across full horizontal width of the screen */
+    width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center horizontally */
     align-items: flex-start; /* Align to the top of the screen */
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Style the iframe */
 iframe {
-    width: 100%; /* Fill container width */
-    height: calc(100vw / 1.414); /* Calculate height based on width (proportional to aspect ratio) */
+    width: calc(100vh * 1.414); /* Calculate width based on height (proportional to aspect ratio) */
+    height: 100vh; /* Fill viewport height */
     border: none; /* Remove iframe border */
-    margin: 0; /* Remove margin */
+    margin: 0 auto; /* Center horizontally */
     padding: 0; /* Remove padding */
     background: none; /* Remove background */
     outline: none; /* Remove outline */
