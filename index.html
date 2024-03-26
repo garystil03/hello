@@ -26,6 +26,12 @@
     <!-- Create a container for the canvas -->
     <div id="pdf-canvas-container"></div>
 
+    <!-- Specify the path to the PDF.js worker script -->
+    <script>
+        // Specify the path to the PDF.js worker script
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+    </script>
+
     <!-- Include PDF.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
@@ -57,9 +63,8 @@
                         canvasContext: context,
                         viewport: viewport,
                         // Set rendering options for optimization
-                        renderInteractiveForms: false, // Disable rendering interactive forms
-                        removePageBorders: true, // Remove page borders for a cleaner appearance
-                        imageLayer: true // Render images as separate layers for improved quality
+                        annotationMode: pdfjsLib.AnnotationMode.DISABLE, // Disable rendering interactive forms
+                        imageLayer: false // Disable rendering images as separate layers
                     };
                     page.render(renderContext).promise.then(function() {
                         console.log('PDF rendered successfully.');
