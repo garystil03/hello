@@ -58,7 +58,7 @@ canvas {
     }
 }
 
-/* Media queries for larger screen sizes */
+/* Additional media queries for larger screen sizes */
 @media screen and (min-width: 1025px) and (max-width: 1112px) and (min-resolution: 192dpi), (min-width: 1025px) and (max-width: 1112px) and (min-resolution: 2dppx) { /* Laptops */
     .page-container {
         max-width: 80%;
