@@ -11,7 +11,7 @@ body, html {
     height: 100vh; /* Full height of viewport */
     overflow: auto; /* Enable vertical scrolling if necessary */
     display: flex;
-    align-items: center; /* Center the PDF vertically */
+    align-items: flex-start; /* Align PDF to the top of the screen */
     justify-content: center; /* Center the PDF horizontally */
 }
 
