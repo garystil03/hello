@@ -26,9 +26,16 @@
                     const context = canvas.getContext('2d');
 
                     // Set the canvas dimensions to match the PDF page
-                    const viewport = page.getViewport({ scale: 1 });
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
+               
+
+                    var scale = 5;
+var viewport = page.getViewport(scale);
+canvas.width = viewport.width;
+canvas.height = viewport.height;
+canvas.style.width = "100%";
+canvas.style.height = "100%";
+wrapper.style.width = Math.floor(viewport.width/scale) + 'pt';
+wrapper.style.height = Math.floor(viewport.height/scale) + 'pt';
 
                     // Append the canvas to the PDF container
                     pdfContainer.appendChild(canvas);
