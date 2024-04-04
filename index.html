@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>comes-the-sun</title>
+    <title>astrolabe-sketches</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -49,13 +49,19 @@
                     pdfContainer.appendChild(canvas);
 
                     // Render the PDF page onto the canvas with specified options
-                    page.render(renderOptions);
+                    page.render(renderOptions).catch(function(error) {
+                        console.error('Error rendering page:', error);
+                    });
+                }).catch(function(error) {
+                    console.error('Error loading page:', error);
                 });
+            }).catch(function(error) {
+                console.error('Error loading PDF:', error);
             });
         }
 
         // Call the loadPdf function with the URL of your PDF file
-        loadPdf('comes-the-sun.pdf');
+        loadPdf('astrolabe-sketches.pdf');
     </script>
 </body>
 </html>
