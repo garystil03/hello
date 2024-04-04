@@ -38,13 +38,13 @@ max-width: 85%;
 
 @media screen and (min-width: 769px) and (max-width: 1600px) { /* Larger screens */
 .page-container {
-max-width: 80%;
+max-width: 100%;
 }
 }
 
 @media screen and (min-width: 1601px) { /* Extra-large desktops */
 .page-container {
-max-width: 80%;
+max-width: 100%;
 }
 }
 
