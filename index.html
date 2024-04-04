@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DXBHGF3P8R"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-DXBHGF3P8R');
-</script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>comes-the-sun</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comes-the-sun</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="pdf-container" class="pdf-container"></div>
+    <div id="pdf-container" class="pdf-container"></div>
 
-<!-- Include PDF.js library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-<script>
-// Function to initialize PDF.js and load the PDF file
-function loadPdf(url) {
-// Fetch the PDF document
-pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-// Load only the first page
-pdfDoc.getPage(1).then(function(page) {
-// Create a container for the page
-const pdfContainer = document.getElementById('pdf-container');
+    <!-- Include PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+        // Function to initialize PDF.js and load the PDF file
+        function loadPdf(url) {
+            // Fetch the PDF document
+            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+                // Load only the first page
+                pdfDoc.getPage(1).then(function(page) {
+                    // Create a container for the page
+                    const pdfContainer = document.getElementById('pdf-container');
 
-// Create a canvas element to render the PDF page
-const canvas = document.createElement('canvas');
-const context = canvas.getContext('2d');
+                    // Create a canvas element to render the PDF page
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
 
-// Set the canvas dimensions to match the PDF page
-const viewport = page.getViewport({ scale: 1 });
-canvas.width = viewport.width;
-canvas.height = viewport.height;
+                    // Set the canvas dimensions to match the PDF page
+                    const viewport = page.getViewport({ scale: 1 });
 
-// Append the canvas to the PDF container
-pdfContainer.appendChild(canvas);
+                    // Set rendering options for maximum quality
+                    const renderOptions = {
+                        canvasContext: context,
+                        viewport: viewport,
+                        // Disable image smoothing for maximum quality
+                        imageSmoothingEnabled: false,
+                        // Set rendering intent to 'print' for highest quality rendering
+                        renderingIntent: 'print',
+                        // Set progressive rendering to false to render the entire page at once for maximum quality
+                        progressiveRender: false,
+                        // Increase pixel ratio for higher resolution rendering
+                        pixelRatio: 2
+                    };
 
-// Render the PDF page onto the canvas
-page.render({ canvasContext: context, viewport: viewport });
-});
-});
-}
+                    canvas.width = viewport.width * 2; // Multiply by pixel ratio
+                    canvas.height = viewport.height * 2; // Multiply by pixel ratio
 
-// Call the loadPdf function with the URL of your PDF file
-loadPdf('poster.pdf');
-</script>
+                    // Append the canvas to the PDF container
+                    pdfContainer.appendChild(canvas);
+
+                    // Render the PDF page onto the canvas with specified options
+                    page.render(renderOptions);
+                });
+            });
+        }
+
+        // Call the loadPdf function with the URL of your PDF file
+        loadPdf('comes-the-sun.pdf');
+    </script>
 </body>
 </html>
-
