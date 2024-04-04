@@ -1,66 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astrolabes</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        #pdf-container {
-            width: 100%;
-            height: 100%;
-            overflow-y: auto; /* Enable vertical scrolling */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        canvas {
-            width: 100%; /* Extend canvas to the full width of the container */
-            height: auto; /* Let the height adjust according to aspect ratio */
-        }
-    </style>
+
+<!-- Google Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DXBHGF3P8R"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DXBHGF3P8R');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>comes-the-sun</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="pdf-container"></div>
+<div id="pdf-container" class="pdf-container"></div>
 
-    <!-- Include PDF.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-    <script>
-        // Function to initialize PDF.js and load the PDF file
-        function loadPdf(url) {
-            // Fetch the PDF document
-            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-                // Load the first page
-                pdfDoc.getPage(1).then(function(page) {
-                    // Create a container for the page
-                    const pdfContainer = document.getElementById('pdf-container');
+<!-- Include PDF.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+<script>
+// Function to initialize PDF.js and load the PDF file
+function loadPdf(url) {
+// Fetch the PDF document
+pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+// Load only the first page
+pdfDoc.getPage(1).then(function(page) {
+// Create a container for the page
+const pdfContainer = document.getElementById('pdf-container');
 
-                    // Create a canvas element to render the PDF page
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
+// Create a canvas element to render the PDF page
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
 
-                    // Set the canvas dimensions to match the PDF page
-                    var viewport = page.getViewport({ scale: 5 });
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
+// Set the canvas dimensions to match the PDF page
+const viewport = page.getViewport({ scale: 1 });
+canvas.width = viewport.width;
+canvas.height = viewport.height;
 
-                    // Append the canvas to the PDF container
-                    pdfContainer.appendChild(canvas);
+// Append the canvas to the PDF container
+pdfContainer.appendChild(canvas);
 
-                    // Render the PDF page onto the canvas
-                    page.render({ canvasContext: context, viewport: viewport });
-                });
-            });
-        }
+// Render the PDF page onto the canvas
+page.render({ canvasContext: context, viewport: viewport });
+});
+});
+}
 
-        // Call the loadPdf function with the URL of your PDF file
-        loadPdf('poster.pdf');
-    </script>
+// Call the loadPdf function with the URL of your PDF file
+loadPdf('poster.pdf');
+</script>
 </body>
 </html>
+
