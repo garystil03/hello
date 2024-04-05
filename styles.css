@@ -1,22 +1,59 @@
-/* CSS for single-page PDF rendering */
-body {
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
-    overflow: hidden; /* Prevent scrolling */
+/* Apply border-box box model to all elements */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
+/* Default styles */
 .pdf-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Hide horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.page-container {
+width: 100%;
+display: flex;
+justify-content: center;
 }
 
 canvas {
-    display: block;
-    margin: 0 auto; /* Center the canvas horizontally */
+width: 100%;
+height: auto;
 }
+
+/* Media queries for various devices and screen sizes */
+@media screen and (max-width: 320px) { /* iPhone SE */
+.page-container {
+max-width: 90%;
+}
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
+.page-container {
+max-width: 85%;
+}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1600px) { /* Larger screens */
+.page-container {
+max-width: 80%;
+}
+}
+
+@media screen and (min-width: 1601px) { /* Extra-large desktops */
+.page-container {
+max-width: 80%;
+}
+}
+
+
+
+
+
+
+
+
+
+
