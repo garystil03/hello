@@ -1,43 +1,14 @@
-/* CSS for single-page PDF rendering */
-.pdf-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align content to the top of the screen */
-}
-
-canvas {
-    display: block;
-    margin: 0 auto; /* Center the canvas horizontally */
-    max-width: 100%;
-    height: auto;
-}
-
-/* Apply border-box box model to all elements */
-* {
-    box-sizing: border-box;
+body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
-/* Media queries for various devices and screen sizes */
-/* iPhone SE */
-@media screen and (max-width: 320px) {
-    .pdf-container {
-        max-width: 90%;
-    }
-}
-
-/* iPhones and iPads */
-@media screen and (min-width: 321px) and (max-width: 768px) {
-    /* No need to adjust max-width */
-}
-
-/* Larger screens */
-@media screen and (min-width: 769px) and (max-width: 1600px) {
-    /* No need to adjust max-width */
-}
-
-/* Extra-large desktops */
-@media screen and (min-width: 1601px) {
-    /* No need to adjust max-width */
+#pdf-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
 }
