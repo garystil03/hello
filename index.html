@@ -41,7 +41,9 @@
                     pdfContainer.appendChild(canvas);
 
                     // Render the PDF page onto the canvas
-                    page.render({ canvasContext: context, viewport: viewport });
+                    page.render({ canvasContext: context, viewport: viewport }).promise
+                        .then(() => console.log('Page rendered successfully'))
+                        .catch(error => console.error('Error rendering page:', error));
                 });
             }).catch(function(error) {
                 console.error('Error loading PDF:', error);
