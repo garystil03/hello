@@ -14,18 +14,24 @@
         }
 
         /* Default styles */
-        #pdf-container { /* Use ID selector to match with JavaScript code */
+        body, html {
+            height: 100%; /* Ensure full height of the viewport */
+            overflow: hidden; /* Hide default body scrollbar */
+        }
+
+        #pdf-container {
             overflow-y: auto; /* Enable vertical scrolling if necessary */
-            width: 100%; /* Extend across the screen horizontally */
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            width: 100vw; /* Extend across the screen horizontally */
             height: 100vh; /* Fill the viewport vertically */
+            display: flex;
+            justify-content: flex-start; /* Align to the top of the screen */
+            align-items: flex-start; /* Align to the top of the screen */
+            margin: 0; /* Remove margin */
         }
 
         canvas {
-            max-width: 100%; /* Ensure canvas doesn't overflow horizontally */
-            max-height: 100%; /* Ensure canvas doesn't overflow vertically */
+            width: 100%; /* Extend canvas to full width of its container */
+            height: auto; /* Automatically adjust height */
             display: block;
             margin: auto; /* Center canvas */
         }
@@ -96,10 +102,6 @@
                             }).catch(function(error) {
                                 console.error('Error rendering page:', error);
                             });
-
-                            // Center the document horizontally
-                            const marginLeft = (pdfContainer.clientWidth - viewportWidth) / 2;
-                            canvas.style.marginLeft = `${marginLeft}px`;
 
                             // Make the document vertically scrollable if necessary
                             if (viewportHeight > screenHeight) {
