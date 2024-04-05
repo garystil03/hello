@@ -2,6 +2,12 @@
 function loadPdf(url) {
     const pdfContainer = document.getElementById('pdf-container');
 
+    // Check if the browser supports PDF.js
+    if (!window.pdfjsLib) {
+        console.error('PDF.js library is not loaded.');
+        return;
+    }
+
     // Check if the browser is iOS Safari
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -16,7 +22,7 @@ function loadPdf(url) {
         pdfContainer.appendChild(iframe);
     } else {
         // For other browsers, use PDF.js
-        pdfjsLib.getDocument(url).promise
+        window.pdfjsLib.getDocument(url).promise
         .then(function(pdfDoc) {
             // Load the first page
             pdfDoc.getPage(1).then(function(page) {
@@ -41,6 +47,9 @@ function loadPdf(url) {
                 // Render the PDF page onto the canvas
                 page.render({ canvasContext: context, viewport: viewport });
             });
+        })
+        .catch(function(error) {
+            console.error('Error loading PDF:', error);
         });
     }
 }
