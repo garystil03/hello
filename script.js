@@ -30,16 +30,24 @@ function loadPdf(url) {
                     const screenWidth = window.screen.width;
                     const screenHeight = window.screen.height;
 
-                    // Choose a suitable scale factor for rendering the PDF
-                    const scale = screenWidth > screenHeight ? screenWidth * 0.9 : screenHeight * 0.8;
-                    const viewport = page.getViewport({ scale });
+                    // Determine the maximum width and height for the canvas
+                    const maxWidth = Math.min(screenWidth, 16384); // Adjust as needed
+                    const maxHeight = Math.min(screenHeight, 16384); // Adjust as needed
 
-                    // Create a canvas element with the calculated dimensions
+                    // Calculate the scale factor to fit within the maximum dimensions
+                    const aspectRatio = page.getViewport({ scale: 1 }).height / page.getViewport({ scale: 1 }).width;
+                    const scaleFactor = Math.min(maxWidth / page.getViewport({ scale: 1 }).width, maxHeight / page.getViewport({ scale: 1 }).height);
+
+                    // Calculate the viewport dimensions with the adjusted scale factor
+                    const viewportWidth = page.getViewport({ scale: scaleFactor }).width;
+                    const viewportHeight = viewportWidth * aspectRatio;
+
+                    // Create a canvas element with the adjusted dimensions
                     const canvas = document.createElement('canvas');
                     const context = canvas.getContext('2d');
 
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
+                    canvas.width = viewportWidth;
+                    canvas.height = viewportHeight;
 
                     // Append the canvas to the PDF container
                     pdfContainer.appendChild(canvas);
@@ -47,7 +55,7 @@ function loadPdf(url) {
                     // Render the PDF page onto the canvas
                     const renderContext = {
                         canvasContext: context,
-                        viewport: viewport,
+                        viewport: page.getViewport({ scale: scaleFactor }),
                     };
                     page.render(renderContext).promise.then(function() {
                         console.log('Page rendered');
@@ -56,11 +64,13 @@ function loadPdf(url) {
                     });
 
                     // Center the document horizontally
-                    const marginLeft = (pdfContainer.clientWidth - viewport.width) / 2;
+                    const marginLeft = (pdfContainer.clientWidth - viewportWidth) / 2;
                     canvas.style.marginLeft = `${marginLeft}px`;
 
-                    // Make the document vertically scrollable
-                    pdfContainer.style.overflowY = 'scroll';
+                    // Make the document vertically scrollable if necessary
+                    if (viewportHeight > screenHeight) {
+                        pdfContainer.style.overflowY = 'scroll';
+                    }
                 });
             })
             .catch(function(error) {
