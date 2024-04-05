@@ -7,32 +7,6 @@
     <!-- Load PDF.js CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf_viewer.min.css">
-
-    <style>
-        /* Apply border-box box model to all elements */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Default styles */
-        #pdf-container { /* Use ID selector to match with JavaScript code */
-            overflow-y: auto; /* Enable vertical scrolling if necessary */
-            width: 100%; /* Extend across the screen horizontally */
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Fill the viewport vertically */
-        }
-
-        canvas {
-            max-width: 100%; /* Ensure canvas doesn't overflow horizontally */
-            max-height: 100%; /* Ensure canvas doesn't overflow vertically */
-            display: block;
-            margin: auto; /* Center canvas */
-        }
-    </style>
 </head>
 <body>
     <div id="pdf-container"></div>
