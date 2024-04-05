@@ -17,37 +17,28 @@ function loadPdf(url) {
         // For other browsers, use PDF.js
         pdfjsLib.getDocument(url).promise
         .then(function(pdfDoc) {
+            // Load the first page
             pdfDoc.getPage(1).then(function(page) {
+                // Calculate viewport width and height based on the device's screen size
+                const screenWidth = window.screen.width;
+                const screenHeight = window.screen.height;
+                const aspectRatio = 1.4142; // Aspect ratio of A3 paper
+                const minScale = Math.min(screenWidth / aspectRatio, screenHeight); // Min scale to fit the A3 paper
+
+                const viewport = page.getViewport({ scale: minScale });
+
+                // Create a canvas element with the calculated dimensions
                 const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
 
-                // Get the device pixel ratio
-                const scale = window.devicePixelRatio || 1;
-
-                // Get the viewport of the page
-                const viewport = page.getViewport({ scale: 1 });
-
-                // Calculate the canvas dimensions based on the viewport and device pixel ratio
-                const canvasWidth = viewport.width * scale;
-                const canvasHeight = viewport.height * scale;
-
-                // Set canvas dimensions
-                canvas.width = canvasWidth;
-                canvas.height = canvasHeight;
-
-                // Set CSS width and height to ensure proper scaling
-                canvas.style.width = `${viewport.width}px`;
-                canvas.style.height = `${viewport.height}px`;
-
-                // Scale the context to match the device pixel ratio
-                context.scale(scale, scale);
-
+                // Append the canvas to the PDF container
                 pdfContainer.appendChild(canvas);
+
+                // Render the PDF page onto the canvas
+                const context = canvas.getContext('2d');
                 page.render({ canvasContext: context, viewport: viewport });
             });
-        })
-        .catch(function(error) {
-            console.error('Error loading PDF:', error);
         });
     }
 }
