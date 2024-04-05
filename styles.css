@@ -1,49 +1,21 @@
 /* Apply border-box box model to all elements */
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Default styles */
 .pdf-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-}
-
-.page-container {
-width: 100%;
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
 }
 
 canvas {
-width: 100%;
-height: auto;
-}
-
-/* Media queries for various devices and screen sizes */
-@media screen and (max-width: 320px) { /* iPhone SE */
-.page-container {
-max-width: 90%;
-}
-}
-
-@media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
-.page-container {
-max-width: 85%;
-}
-}
-
-@media screen and (min-width: 769px) and (max-width: 1600px) { /* Larger screens */
-.page-container {
-max-width: 80%;
-}
-}
-
-@media screen and (min-width: 1601px) { /* Extra-large desktops */
-.page-container {
-max-width: 80%;
-}
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* Ensure canvas is displayed as block element */
+    margin: 0 auto; /* Center canvas horizontally */
 }
