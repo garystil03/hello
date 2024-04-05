@@ -15,3 +15,8 @@ body {
     overflow-x: hidden; /* Hide horizontal scrolling */
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
+
+canvas {
+    display: block;
+    margin: 0 auto; /* Center the canvas horizontally */
+}
