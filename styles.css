@@ -7,14 +7,17 @@
 
 /* Default styles */
 .pdf-container {
-    overflow-y: scroll;
-    width: 100vw; /* Extend across the screen horizontally */
+    overflow-y: auto; /* Enable vertical scrolling if necessary */
+    width: 100%; /* Extend across the screen horizontally */
     display: flex;
     justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Fill the viewport vertically */
 }
 
 canvas {
-    max-width: 100%;
+    max-width: 100%; /* Ensure canvas doesn't overflow horizontally */
+    max-height: 100%; /* Ensure canvas doesn't overflow vertically */
     display: block;
-    margin: 0 auto; /* Center horizontally */
+    margin: auto; /* Center canvas */
 }
