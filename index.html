@@ -26,12 +26,9 @@
             display: flex;
             justify-content: flex-start; /* Align to the top of the screen */
             align-items: flex-start; /* Align to the top of the screen */
-            margin: 0; /* Remove margin */
         }
 
         canvas {
-            width: 100%; /* Extend canvas to full width of its container */
-            height: auto; /* Automatically adjust height */
             display: block;
             margin: auto; /* Center canvas */
         }
@@ -48,71 +45,43 @@
         function loadPdf(url) {
             const pdfContainer = document.getElementById('pdf-container');
 
-            // Check if the browser is iOS Safari
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            // For other browsers, use PDF.js
+            window.pdfjsLib.getDocument(url).promise
+                .then(function(pdfDoc) {
+                    // Load the first page
+                    pdfDoc.getPage(1).then(function(page) {
+                        // Create a canvas element
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
 
-            if (isIOS && isSafari) {
-                // For iOS Safari, use an <iframe> element to render PDF
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://docs.google.com/viewer?url=${url}&embedded=true`;
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.border = 'none'; // Remove iframe border
-                pdfContainer.appendChild(iframe);
-            } else {
-                // For other browsers, use PDF.js
-                window.pdfjsLib.getDocument(url).promise
-                    .then(function(pdfDoc) {
-                        // Load the first page
-                        pdfDoc.getPage(1).then(function(page) {
-                            // Calculate viewport width and height based on the device's screen size
-                            const screenWidth = window.screen.width;
-                            const screenHeight = window.screen.height;
+                        // Set canvas width and height to match original document dimensions
+                        const viewport = page.getViewport({ scale: 1 });
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
 
-                            // Determine the maximum width and height for the canvas
-                            const maxWidth = Math.min(screenWidth, 16384); // Adjust as needed
-                            const maxHeight = Math.min(screenHeight, 16384); // Adjust as needed
+                        // Append the canvas to the PDF container
+                        pdfContainer.appendChild(canvas);
 
-                            // Calculate the scale factor to fit within the maximum dimensions
-                            const viewport = page.getViewport({ scale: 1 });
-                            const scaleFactor = Math.min(maxWidth / viewport.width, maxHeight / viewport.height);
-
-                            // Calculate the viewport dimensions with the adjusted scale factor
-                            const viewportWidth = viewport.width * scaleFactor;
-                            const viewportHeight = viewport.height * scaleFactor;
-
-                            // Create a canvas element with the adjusted dimensions
-                            const canvas = document.createElement('canvas');
-                            const context = canvas.getContext('2d');
-
-                            canvas.width = viewportWidth;
-                            canvas.height = viewportHeight;
-
-                            // Append the canvas to the PDF container
-                            pdfContainer.appendChild(canvas);
-
-                            // Render the PDF page onto the canvas
-                            const renderContext = {
-                                canvasContext: context,
-                                viewport: page.getViewport({ scale: scaleFactor }),
-                            };
-                            page.render(renderContext).promise.then(function() {
-                                console.log('Page rendered');
-                            }).catch(function(error) {
-                                console.error('Error rendering page:', error);
-                            });
-
-                            // Make the document vertically scrollable if necessary
-                            if (viewportHeight > screenHeight) {
-                                pdfContainer.style.overflowY = 'scroll';
-                            }
+                        // Render the PDF page onto the canvas
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport,
+                        };
+                        page.render(renderContext).promise.then(function() {
+                            console.log('Page rendered');
+                        }).catch(function(error) {
+                            console.error('Error rendering page:', error);
                         });
-                    })
-                    .catch(function(error) {
-                        console.error('Error loading PDF:', error);
+
+                        // Make the document vertically scrollable if necessary
+                        if (viewport.height > window.innerHeight) {
+                            pdfContainer.style.overflowY = 'scroll';
+                        }
                     });
-            }
+                })
+                .catch(function(error) {
+                    console.error('Error loading PDF:', error);
+                });
         }
 
         // Call the loadPdf function with the URL of your PDF file
