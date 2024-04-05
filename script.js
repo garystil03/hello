@@ -9,7 +9,7 @@ function loadPdf(url) {
     if (isIOS && isSafari) {
         // For iOS Safari, use an <iframe> element to render PDF
         const iframe = document.createElement('iframe');
-        iframe.src = url;
+        iframe.src = `https://docs.google.com/viewer?url=${url}&embedded=true`;
         iframe.style.width = '100%';
         iframe.style.height = '100%';
         iframe.style.border = 'none'; // Remove iframe border
