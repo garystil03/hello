@@ -24,12 +24,20 @@ function loadPdf(url) {
                 // Get the device pixel ratio
                 const scale = window.devicePixelRatio || 1;
 
-                // Get the viewport of the page at 100% scale
+                // Get the viewport of the page
                 const viewport = page.getViewport({ scale: 1 });
 
-                // Set canvas dimensions scaled by the device pixel ratio
-                canvas.width = viewport.width * scale;
-                canvas.height = viewport.height * scale;
+                // Calculate the canvas dimensions based on the viewport and device pixel ratio
+                const canvasWidth = viewport.width * scale;
+                const canvasHeight = viewport.height * scale;
+
+                // Set canvas dimensions
+                canvas.width = canvasWidth;
+                canvas.height = canvasHeight;
+
+                // Set CSS width and height to ensure proper scaling
+                canvas.style.width = `${viewport.width}px`;
+                canvas.style.height = `${viewport.height}px`;
 
                 // Scale the context to match the device pixel ratio
                 context.scale(scale, scale);
