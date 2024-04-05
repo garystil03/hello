@@ -1,23 +1,22 @@
 /* Apply border-box box model to all elements */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 /* Default styles */
-#pdf-container { /* Use ID selector to match with JavaScript code */
+#pdf-container {
     overflow-y: auto; /* Enable vertical scrolling if necessary */
     width: 100%; /* Extend across the screen horizontally */
+    height: 100vh; /* Fill the viewport vertically */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    height: 100vh; /* Fill the viewport vertically */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 canvas {
-    max-width: 100%; /* Ensure canvas doesn't overflow horizontally */
-    max-height: 100%; /* Ensure canvas doesn't overflow vertically */
+    width: 100%; /* Extend canvas to full width of its container */
+    height: auto; /* Automatically adjust height */
     display: block;
     margin: auto; /* Center canvas */
 }
