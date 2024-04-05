@@ -26,12 +26,22 @@ function loadPdf(url) {
         .then(function(pdfDoc) {
             // Load the first page
             pdfDoc.getPage(1).then(function(page) {
-                // Calculate viewport width based on the device's screen size
+                // Calculate viewport width and height based on the device's screen size
                 const screenWidth = window.screen.width;
+                const screenHeight = window.screen.height;
                 const aspectRatio = page.getViewport({ scale: 1 }).height / page.getViewport({ scale: 1 }).width;
 
-                const viewportWidth = screenWidth;
-                const viewportHeight = screenWidth * aspectRatio;
+                let viewportWidth, viewportHeight;
+
+                if (screenWidth / screenHeight > 1) {
+                    // Landscape orientation
+                    viewportWidth = Math.min(screenWidth * 0.9, 1024); // Limit max width for landscape orientation
+                    viewportHeight = viewportWidth * aspectRatio;
+                } else {
+                    // Portrait orientation
+                    viewportHeight = Math.min(screenHeight * 0.8, 1024); // Limit max height for portrait orientation
+                    viewportWidth = viewportHeight / aspectRatio;
+                }
 
                 // Create a canvas element with the calculated dimensions
                 const canvas = document.createElement('canvas');
@@ -53,6 +63,13 @@ function loadPdf(url) {
                 }).catch(function(error) {
                     console.error('Error rendering page:', error);
                 });
+
+                // Center the document horizontally
+                const marginLeft = (pdfContainer.clientWidth - viewportWidth) / 2;
+                canvas.style.marginLeft = `${marginLeft}px`;
+
+                // Make the document vertically scrollable
+                pdfContainer.style.overflowY = 'scroll';
             });
         })
         .catch(function(error) {
