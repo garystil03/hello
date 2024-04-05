@@ -9,7 +9,7 @@
     width: 100%; /* Extend across the screen horizontally */
     height: 100vh; /* Fill the viewport vertically */
     display: flex;
-    justify-content: center; /* Center horizontally *
+    justify-content: center; /* Center horizontally */
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
@@ -18,4 +18,11 @@ canvas {
     height: auto; /* Automatically adjust height */
     display: block;
     margin: auto; /* Center canvas */
+}
+
+/* Styles for high-density screens (e.g., Retina displays) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    canvas {
+        image-rendering: -webkit-optimize-contrast; /* Improve image contrast */
+    }
 }
