@@ -7,12 +7,13 @@ function loadPdf(url) {
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     if (isIOS && isSafari) {
-        // For iOS Safari, use an <embed> element to render PDF
-        const embed = document.createElement('embed');
-        embed.src = url;
-        embed.width = '100%';
-        embed.height = '100%';
-        pdfContainer.appendChild(embed);
+        // For iOS Safari, use an <iframe> element to render PDF
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none'; // Remove iframe border
+        pdfContainer.appendChild(iframe);
     } else {
         // For other browsers, use PDF.js
         pdfjsLib.getDocument(url).promise
@@ -25,17 +26,12 @@ function loadPdf(url) {
                 const aspectRatio = 1.4142; // Aspect ratio of A3 paper
                 const minScale = Math.min(screenWidth / aspectRatio, screenHeight); // Min scale to fit the A3 paper
 
-                // Limit the scale to avoid exceeding the canvas maximum size
-                const maxScale = 1; // Adjust as needed based on device capabilities
-                const scale = Math.min(minScale, maxScale);
-
-                const viewport = page.getViewport({ scale });
+                const viewport = page.getViewport({ scale: minScale });
 
                 // Create a canvas element with the calculated dimensions
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
 
-                // Set canvas dimensions to match viewport
                 canvas.width = viewport.width;
                 canvas.height = viewport.height;
 
