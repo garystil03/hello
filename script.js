@@ -26,7 +26,7 @@ function loadPdf(url) {
                 const minScale = Math.min(screenWidth / aspectRatio, screenHeight); // Min scale to fit the A3 paper
 
                 // Limit the scale to avoid exceeding the canvas maximum size
-                const maxScale = 10; // Adjust as needed based on device capabilities
+                const maxScale = 1; // Adjust as needed based on device capabilities
                 const scale = Math.min(minScale, maxScale);
 
                 const viewport = page.getViewport({ scale });
