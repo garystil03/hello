@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-
-<!-- Google Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DXBHGF3P8R"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-DXBHGF3P8R');
-</script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>astrolabe-sketches</title>
-<link rel="stylesheet" href="styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>astrolabe-sketches</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="pdf-container" class="pdf-container"></div>
+    <div id="pdf-container" class="pdf-container">
+        <!-- Canvas for rendering PDF page will be inserted here -->
+    </div>
 
-<!-- Include PDF.js library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-<script>
-// Function to initialize PDF.js and load the PDF file
-function loadPdf(url) {
-// Fetch the PDF document
-pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-// Load only the first page
-pdfDoc.getPage(1).then(function(page) {
-// Create a container for the page
-const pdfContainer = document.getElementById('pdf-container');
+    <!-- Include PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+        // Function to initialize PDF.js and load the PDF file
+        function loadPdf(url) {
+            const pdfContainer = document.getElementById('pdf-container');
 
-// Create a canvas element to render the PDF page
-const canvas = document.createElement('canvas');
-const context = canvas.getContext('2d');
+            // Check if the browser supports PDF.js
+            if (!window.pdfjsLib) {
+                console.error('PDF.js library is not loaded.');
+                return;
+            }
 
-// Set the canvas dimensions to match the PDF page
-const viewport = page.getViewport({ scale: 1 });
-canvas.width = viewport.width;
-canvas.height = viewport.height;
+            // Fetch the PDF document
+            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+                // Load only the first page
+                pdfDoc.getPage(1).then(function(page) {
+                    // Create a canvas element to render the PDF page
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
 
-// Append the canvas to the PDF container
-pdfContainer.appendChild(canvas);
+                    // Set the canvas dimensions to match the PDF page
+                    const viewport = page.getViewport({ scale: 1 });
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
 
-// Render the PDF page onto the canvas
-page.render({ canvasContext: context, viewport: viewport });
-});
-});
-}
+                    // Append the canvas to the PDF container
+                    pdfContainer.appendChild(canvas);
 
-// Call the loadPdf function with the URL of your PDF file
-loadPdf('astrolabe-sketches.pdf');
-</script>
+                    // Render the PDF page onto the canvas
+                    page.render({ canvasContext: context, viewport: viewport });
+                });
+            }).catch(function(error) {
+                console.error('Error loading PDF:', error);
+            });
+        }
+
+        // Call the loadPdf function with the URL of your PDF file
+        loadPdf('astrolabe-sketches.pdf');
+    </script>
 </body>
 </html>
