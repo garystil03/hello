@@ -26,28 +26,33 @@ function loadPdf(url) {
         .then(function(pdfDoc) {
             // Load the first page
             pdfDoc.getPage(1).then(function(page) {
-                // Calculate viewport width and height based on the device's screen size
+                // Calculate viewport width based on the device's screen size
                 const screenWidth = window.screen.width;
-                const screenHeight = window.screen.height;
+                const aspectRatio = page.getViewport({ scale: 1 }).height / page.getViewport({ scale: 1 }).width;
 
-                const viewport = page.getViewport({ scale: 1 }); // Scale 1 for original size
-
-                // Adjust the viewport size based on the screen dimensions
-                viewport.width = screenWidth;
-                viewport.height = screenHeight;
+                const viewportWidth = screenWidth;
+                const viewportHeight = screenWidth * aspectRatio;
 
                 // Create a canvas element with the calculated dimensions
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
 
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
+                canvas.width = viewportWidth;
+                canvas.height = viewportHeight;
 
                 // Append the canvas to the PDF container
                 pdfContainer.appendChild(canvas);
 
                 // Render the PDF page onto the canvas
-                page.render({ canvasContext: context, viewport: viewport });
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: page.getViewport({ scale: 1 }),
+                };
+                page.render(renderContext).promise.then(function() {
+                    console.log('Page rendered');
+                }).catch(function(error) {
+                    console.error('Error rendering page:', error);
+                });
             });
         })
         .catch(function(error) {
