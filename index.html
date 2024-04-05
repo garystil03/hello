@@ -2,54 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>astrolabe-sketches</title>
-    <style>
-        /* CSS for single-page PDF rendering */
-        body {
-            margin: 0; /* Remove default body margin */
-            overflow: hidden; /* Prevent scrolling */
-        }
-
-        .pdf-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Fill the entire viewport */
-            overflow: hidden; /* Hide any overflow */
-        }
-
-        canvas {
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="pdf-container" class="pdf-container"></div>
 
     <!-- Include PDF.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-    <script>
-        // Function to initialize PDF.js and load the PDF file
-        function loadPdf(url) {
-            pdfjsLib.getDocument(url).promise
-            .then(function(pdfDoc) {
-                pdfDoc.getPage(1).then(function(page) {
-                    const pdfContainer = document.getElementById('pdf-container');
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    const viewport = page.getViewport({ scale: 1 });
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
-                    pdfContainer.appendChild(canvas);
-                    page.render({ canvasContext: context, viewport: viewport });
-                });
-            });
-        }
-
-        // Call the loadPdf function with the URL of your PDF file
-        loadPdf('astrolabe-sketches.pdf');
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
