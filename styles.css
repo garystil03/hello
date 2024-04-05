@@ -1,18 +1,17 @@
 /* CSS for single-page PDF rendering */
 body {
     margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
     overflow: hidden; /* Prevent scrolling */
 }
 
 .pdf-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Fill the entire viewport */
-    overflow: hidden; /* Hide any overflow */
-}
-
-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
