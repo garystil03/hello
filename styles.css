@@ -1,3 +1,17 @@
+/* CSS for single-page PDF rendering */
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top of the screen */
+}
+
+canvas {
+    display: block;
+    margin: 0 auto; /* Center the canvas horizontally */
+    max-width: 100%;
+    height: auto;
+}
+
 /* Apply border-box box model to all elements */
 * {
     box-sizing: border-box;
@@ -5,28 +19,10 @@
     padding: 0;
 }
 
-/* Default styles */
-.pdf-container {
-    display: flex;
-    justify-content: center;
-}
-
-.page-container {
-    width: 100%;
-    max-width: 80%; /* Default max-width */
-    display: flex;
-    justify-content: center;
-}
-
-canvas {
-    width: 100%;
-    height: auto;
-}
-
 /* Media queries for various devices and screen sizes */
 /* iPhone SE */
 @media screen and (max-width: 320px) {
-    .page-container {
+    .pdf-container {
         max-width: 90%;
     }
 }
