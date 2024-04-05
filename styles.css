@@ -6,7 +6,7 @@
 }
 
 /* Default styles */
-.pdf-container {
+#pdf-container { /* Use ID selector to match with JavaScript code */
     overflow-y: auto; /* Enable vertical scrolling if necessary */
     width: 100%; /* Extend across the screen horizontally */
     display: flex;
