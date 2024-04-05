@@ -29,10 +29,12 @@ function loadPdf(url) {
                 // Calculate viewport width and height based on the device's screen size
                 const screenWidth = window.screen.width;
                 const screenHeight = window.screen.height;
-                const aspectRatio = 1.4142; // Aspect ratio of A3 paper
-                const minScale = Math.min(screenWidth / aspectRatio, screenHeight); // Min scale to fit the A3 paper
 
-                const viewport = page.getViewport({ scale: minScale });
+                const viewport = page.getViewport({ scale: 1 }); // Scale 1 for original size
+
+                // Adjust the viewport size based on the screen dimensions
+                viewport.width = screenWidth;
+                viewport.height = screenHeight;
 
                 // Create a canvas element with the calculated dimensions
                 const canvas = document.createElement('canvas');
