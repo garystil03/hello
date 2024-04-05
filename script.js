@@ -19,26 +19,25 @@ function loadPdf(url) {
         .then(function(pdfDoc) {
             // Load the first page
             pdfDoc.getPage(1).then(function(page) {
-                // Set the resolution for high-density screens
-                const devicePixelRatio = window.devicePixelRatio || 1;
-                const scale = devicePixelRatio > 1 ? 2 : 1; // Adjust scale for high-density screens
-
                 // Calculate viewport width and height based on the device's screen size
                 const screenWidth = window.screen.width;
                 const screenHeight = window.screen.height;
                 const aspectRatio = 1.4142; // Aspect ratio of A3 paper
                 const minScale = Math.min(screenWidth / aspectRatio, screenHeight); // Min scale to fit the A3 paper
 
-                const viewport = page.getViewport({ scale: minScale * scale });
+                // Limit the scale to avoid exceeding the canvas maximum size
+                const maxScale = 10; // Adjust as needed based on device capabilities
+                const scale = Math.min(minScale, maxScale);
+
+                const viewport = page.getViewport({ scale });
 
                 // Create a canvas element with the calculated dimensions
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
-                const viewportWidth = viewport.width * devicePixelRatio;
-                const viewportHeight = viewport.height * devicePixelRatio;
 
-                canvas.width = viewportWidth;
-                canvas.height = viewportHeight;
+                // Set canvas dimensions to match viewport
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
 
                 // Append the canvas to the PDF container
                 pdfContainer.appendChild(canvas);
