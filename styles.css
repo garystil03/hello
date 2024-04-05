@@ -9,8 +9,7 @@
     width: 100%; /* Extend across the screen horizontally */
     height: 100vh; /* Fill the viewport vertically */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally *
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
