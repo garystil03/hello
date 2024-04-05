@@ -71,4 +71,49 @@
                             const viewport = page.getViewport({ scale: 1 });
                             const scaleFactor = Math.min(maxWidth / viewport.width, maxHeight / viewport.height);
 
-                            
+                            // Calculate the viewport dimensions with the adjusted scale factor
+                            const viewportWidth = viewport.width * scaleFactor;
+                            const viewportHeight = viewport.height * scaleFactor;
+
+                            // Create a canvas element with the adjusted dimensions
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+
+                            canvas.width = viewportWidth;
+                            canvas.height = viewportHeight;
+
+                            // Append the canvas to the PDF container
+                            pdfContainer.appendChild(canvas);
+
+                            // Render the PDF page onto the canvas
+                            const renderContext = {
+                                canvasContext: context,
+                                viewport: page.getViewport({ scale: scaleFactor }),
+                            };
+                            page.render(renderContext).promise.then(function() {
+                                console.log('Page rendered');
+                            }).catch(function(error) {
+                                console.error('Error rendering page:', error);
+                            });
+
+                            // Center the document horizontally
+                            const marginLeft = (pdfContainer.clientWidth - viewportWidth) / 2;
+                            canvas.style.marginLeft = `${marginLeft}px`;
+
+                            // Make the document vertically scrollable if necessary
+                            if (viewportHeight > screenHeight) {
+                                pdfContainer.style.overflowY = 'scroll';
+                            }
+                        });
+                    })
+                    .catch(function(error) {
+                        console.error('Error loading PDF:', error);
+                    });
+            }
+        }
+
+        // Call the loadPdf function with the URL of your PDF file
+        loadPdf('astrolabe-sketches.pdf');
+    </script>
+</body>
+</html>
