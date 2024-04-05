@@ -40,10 +40,6 @@ function loadPdf(url) {
                 canvas.width = viewportWidth;
                 canvas.height = viewportHeight;
 
-                // Adjust CSS dimensions for high-density screens
-                canvas.style.width = `${viewport.width}px`;
-                canvas.style.height = `${viewport.height}px`;
-
                 // Append the canvas to the PDF container
                 pdfContainer.appendChild(canvas);
 
