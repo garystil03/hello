@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>astrolabe-sketches</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PDF Viewer</title>
+    <style>
+        /* Apply border-box box model to all elements */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Default styles */
+        #pdf-container { /* Use ID selector to match with JavaScript code */
+            overflow-y: auto; /* Enable vertical scrolling if necessary */
+            width: 100%; /* Extend across the screen horizontally */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Fill the viewport vertically */
+        }
+
+        canvas {
+            max-width: 100%; /* Ensure canvas doesn't overflow horizontally */
+            max-height: 100%; /* Ensure canvas doesn't overflow vertically */
+            display: block;
+            margin: auto; /* Center canvas */
+        }
+    </style>
 </head>
 <body>
-    <div id="pdf-container" class="pdf-container">
-        <!-- Canvas for rendering PDF page will be inserted here -->
-    </div>
+    <div id="pdf-container"></div>
 
-    <!-- Include PDF.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
         // Function to initialize PDF.js and load the PDF file
         function loadPdf(url) {
@@ -24,30 +44,75 @@
                 return;
             }
 
-            // Fetch the PDF document
-            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-                // Load only the first page
-                pdfDoc.getPage(1).then(function(page) {
-                    // Create a canvas element to render the PDF page
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
+            // Check if the browser is iOS Safari
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-                    // Set the canvas dimensions to match the PDF page
-                    const viewport = page.getViewport({ scale: 1 });
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
+            if (isIOS && isSafari) {
+                // For iOS Safari, use an <iframe> element to render PDF
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://docs.google.com/viewer?url=${url}&embedded=true`;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none'; // Remove iframe border
+                pdfContainer.appendChild(iframe);
+            } else {
+                // For other browsers, use PDF.js
+                window.pdfjsLib.getDocument(url).promise
+                    .then(function(pdfDoc) {
+                        // Load the first page
+                        pdfDoc.getPage(1).then(function(page) {
+                            // Calculate viewport width and height based on the device's screen size
+                            const screenWidth = window.screen.width;
+                            const screenHeight = window.screen.height;
 
-                    // Append the canvas to the PDF container
-                    pdfContainer.appendChild(canvas);
+                            // Determine the maximum width and height for the canvas
+                            const maxWidth = Math.min(screenWidth, 16384); // Adjust as needed
+                            const maxHeight = Math.min(screenHeight, 16384); // Adjust as needed
 
-                    // Render the PDF page onto the canvas
-                    page.render({ canvasContext: context, viewport: viewport }).promise
-                        .then(() => console.log('Page rendered successfully'))
-                        .catch(error => console.error('Error rendering page:', error));
-                });
-            }).catch(function(error) {
-                console.error('Error loading PDF:', error);
-            });
+                            // Calculate the scale factor to fit within the maximum dimensions
+                            const viewport = page.getViewport({ scale: 1 });
+                            const scaleFactor = Math.min(maxWidth / viewport.width, maxHeight / viewport.height);
+
+                            // Calculate the viewport dimensions with the adjusted scale factor
+                            const viewportWidth = viewport.width * scaleFactor;
+                            const viewportHeight = viewport.height * scaleFactor;
+
+                            // Create a canvas element with the adjusted dimensions
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+
+                            canvas.width = viewportWidth;
+                            canvas.height = viewportHeight;
+
+                            // Append the canvas to the PDF container
+                            pdfContainer.appendChild(canvas);
+
+                            // Render the PDF page onto the canvas
+                            const renderContext = {
+                                canvasContext: context,
+                                viewport: page.getViewport({ scale: scaleFactor }),
+                            };
+                            page.render(renderContext).promise.then(function() {
+                                console.log('Page rendered');
+                            }).catch(function(error) {
+                                console.error('Error rendering page:', error);
+                            });
+
+                            // Center the document horizontally
+                            const marginLeft = (pdfContainer.clientWidth - viewportWidth) / 2;
+                            canvas.style.marginLeft = `${marginLeft}px`;
+
+                            // Make the document vertically scrollable if necessary
+                            if (viewportHeight > screenHeight) {
+                                pdfContainer.style.overflowY = 'scroll';
+                            }
+                        });
+                    })
+                    .catch(function(error) {
+                        console.error('Error loading PDF:', error);
+                    });
+            }
         }
 
         // Call the loadPdf function with the URL of your PDF file
