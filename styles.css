@@ -1,59 +1,47 @@
 /* Apply border-box box model to all elements */
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Default styles */
 .pdf-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .page-container {
-width: 100%;
-display: flex;
-justify-content: center;
+    width: 100%;
+    max-width: 80%; /* Default max-width */
+    display: flex;
+    justify-content: center;
 }
 
 canvas {
-width: 100%;
-height: auto;
+    width: 100%;
+    height: auto;
 }
 
 /* Media queries for various devices and screen sizes */
-@media screen and (max-width: 320px) { /* iPhone SE */
-.page-container {
-max-width: 90%;
-}
-}
-
-@media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
-.page-container {
-max-width: 85%;
-}
+/* iPhone SE */
+@media screen and (max-width: 320px) {
+    .page-container {
+        max-width: 90%;
+    }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1600px) { /* Larger screens */
-.page-container {
-max-width: 80%;
-}
-}
-
-@media screen and (min-width: 1601px) { /* Extra-large desktops */
-.page-container {
-max-width: 80%;
-}
+/* iPhones and iPads */
+@media screen and (min-width: 321px) and (max-width: 768px) {
+    /* No need to adjust max-width */
 }
 
+/* Larger screens */
+@media screen and (min-width: 769px) and (max-width: 1600px) {
+    /* No need to adjust max-width */
+}
 
-
-
-
-
-
-
-
-
+/* Extra-large desktops */
+@media screen and (min-width: 1601px) {
+    /* No need to adjust max-width */
+}
