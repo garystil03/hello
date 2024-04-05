@@ -35,12 +35,12 @@ function loadPdf(url) {
                     const maxHeight = Math.min(screenHeight, 16384); // Adjust as needed
 
                     // Calculate the scale factor to fit within the maximum dimensions
-                    const aspectRatio = page.getViewport({ scale: 1 }).height / page.getViewport({ scale: 1 }).width;
-                    const scaleFactor = Math.min(maxWidth / page.getViewport({ scale: 1 }).width, maxHeight / page.getViewport({ scale: 1 }).height);
+                    const viewport = page.getViewport({ scale: 1 });
+                    const scaleFactor = Math.min(maxWidth / viewport.width, maxHeight / viewport.height);
 
                     // Calculate the viewport dimensions with the adjusted scale factor
-                    const viewportWidth = page.getViewport({ scale: scaleFactor }).width;
-                    const viewportHeight = viewportWidth * aspectRatio;
+                    const viewportWidth = viewport.width * scaleFactor;
+                    const viewportHeight = viewport.height * scaleFactor;
 
                     // Create a canvas element with the adjusted dimensions
                     const canvas = document.createElement('canvas');
