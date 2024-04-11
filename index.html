@@ -54,6 +54,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     
     <script>
+        // Specify the location of the PDF.js worker script
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
         // Function to initialize PDF.js and load the PDF file
         function loadPdf(url) {
             const pdfContainer = document.getElementById('pdf-container');
@@ -98,8 +101,7 @@
         }
 
         // Call the loadPdf function with the URL of your PDF file
-        loadPdf('https://docs.google.com/viewer?url=https://docs.google.com/document/d/1Cl3z-E_yn5rFf0XJ2d7-YJ-1lkIZpWB8/export?format=pdf');
+        loadPdf('https://drive.google.com/uc?id=1Cl3z-E_yn5rFf0XJ2d7-YJ-1lkIZpWB8');
     </script>
 </body>
 </html>
-
