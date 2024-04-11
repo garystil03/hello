@@ -59,7 +59,7 @@
             const pdfContainer = document.getElementById('pdf-container');
 
             // For other browsers, use PDF.js
-            window.pdfjsLib.getDocument(url).promise
+            pdfjsLib.getDocument(url).promise
                 .then(function(pdfDoc) {
                     // Load the first page
                     pdfDoc.getPage(1).then(function(page) {
@@ -98,7 +98,7 @@
         }
 
         // Call the loadPdf function with the URL of your PDF file
-        loadPdf('https://https://drive.google.com/file/d/1Cl3z-E_yn5rFf0XJ2d7-YJ-1lkIZpWB8/export?format=pdf');
+        loadPdf('https://drive.google.com/uc?id=1Cl3z-E_yn5rFf0XJ2d7-YJ-1lkIZpWB8');
     </script>
 </body>
 </html>
