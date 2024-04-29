@@ -8,19 +8,23 @@
 /* Default styles */
 body, html {
     height: 100%;
-    overflow-y: hidden; /* Remove vertical scrollbar */
 }
 
 .pdf-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align to the top vertically */
+    max-width: 1000px; /* Limit maximum width */
+    margin: 0 auto; /* Center horizontally */
     height: 100%; /* Occupy full height of the viewport */
-    overflow-y: hidden; /* Remove vertical scrollbar */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.pdf-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
 }
 
 canvas {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     margin: 0 auto; /* Center canvas horizontally */
 }
