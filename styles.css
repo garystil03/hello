@@ -38,13 +38,13 @@ canvas {
 
 @media screen and (min-width: 769px) and (max-width: 1200px) { /* Larger screens up to 1200px */
     .page-container {
-        max-width: 80%;
+        max-width: calc(80% - 40px); /* Adjust padding based on screen width */
+        padding: 0 20px; /* Add padding to each side */
     }
 }
 
 @media screen and (min-width: 1201px) { /* Screens wider than 1200px */
     .page-container {
-        max-width: 80%; /* Limit width */
-        padding: 0 20px; /* Add padding to each side */
+        max-width: 1200px; /* Limit width to 1200px */
     }
 }
