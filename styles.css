@@ -6,25 +6,44 @@
 }
 
 /* Default styles */
-body, html {
-    height: 100%;
-    overflow: hidden; /* Hide default body scrollbar */
+.pdf-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .page-container {
-    margin: 0 auto; /* Center horizontally */
-    height: 100%; /* Occupy full height of the viewport */
-    overflow-y: auto; /* Enable vertical scrolling */
-    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
-}
-
-.page-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 canvas {
     width: 100%;
     height: auto;
-    margin: 0 auto; /* Center canvas horizontally */
+}
+
+/* Media queries for various devices and screen sizes */
+@media screen and (max-width: 320px) { /* iPhone SE */
+    .page-container {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
+    .page-container {
+        max-width: 85%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1600px) { /* Larger screens */
+    .page-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1601px) { /* Extra-large desktops */
+    .page-container {
+        max-width: 80%;
+    }
 }
