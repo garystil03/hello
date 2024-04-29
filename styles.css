@@ -8,19 +8,23 @@
 /* Default styles */
 body, html {
     height: 100%; /* Ensure full height of the viewport */
-    overflow: hidden; /* Hide default body scrollbar */
+    overflow-x: hidden; /* Disable horizontal scrolling */
     background-color: #fff; /* Set background color to white */
 }
 
 .pdf-container {
     overflow-y: auto; /* Enable vertical scrolling if necessary */
-    overflow-x: hidden; /* Disable horizontal scrolling */
     width: 100%; /* Use full width of the viewport */
     height: 100%; /* Use full height of the viewport */
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: flex-start; /* Align content to the top of the page */
+    align-items: flex-start; /* Align content to the top of the page */
+    padding: 20px; /* Add some padding for space */
+    box-sizing: border-box; /* Ensure padding is included in container size */
 }
 
 canvas {
-    display:
+    max-width: 100%; /* Ensure canvas fits within viewport */
+    height: auto; /* Allow canvas to adjust its height */
+    margin: auto; /* Center canvas */
+}
