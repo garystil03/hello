@@ -1,28 +1,49 @@
 /* Apply border-box box model to all elements */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Default styles */
-#pdf-container {
-    overflow-y: auto; /* Enable vertical scrolling if necessary */
-    width: 100%; /* Extend across the screen horizontally */
-    height: 100vh; /* Fill the viewport vertically */
+.pdf-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 canvas {
-    width: 100%; /* Extend canvas to full width of its container */
-    height: auto; /* Automatically adjust height */
-    display: block;
-    margin: auto; /* Center canvas */
+    width: 100%;
+    height: auto;
 }
 
-/* Styles for high-density screens (e.g., Retina displays) */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    canvas {
-        image-rendering: -webkit-optimize-contrast; /* Improve image contrast */
+/* Media queries for various devices and screen sizes */
+@media screen and (max-width: 320px) { /* iPhone SE */
+    .page-container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
+    .page-container {
+        max-width: 85%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1600px) { /* Larger screens */
+    .page-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1601px) { /* Extra-large desktops */
+    .page-container {
+        max-width: 80%;
     }
 }
