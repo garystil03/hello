@@ -21,7 +21,6 @@ body, html {
 
 .pdf-container {
     overflow-y: auto; /* Enable vertical scrolling if necessary */
-    width: 100%; /* Use full width of the viewport */
     max-width: 800px; /* Adjust this value as needed */
     padding: 20px; /* Add padding if needed */
 }
