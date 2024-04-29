@@ -9,10 +9,6 @@ body, html {
     padding: 0;
     height: 100%;
     overflow-x: hidden; /* Disable horizontal scrolling */
-}
-
-/* Default styles */
-body {
     background-color: #fff; /* Set background color to white */
 }
 
@@ -23,14 +19,12 @@ body {
     display: flex;
     justify-content: flex-start; /* Align content to the top of the page */
     align-items: flex-start; /* Align content to the top of the page */
-    padding: 20px; /* Add some padding for space */
     position: fixed; /* Position the container fixed to the top */
     top: 0; /* Align the container to the top */
     left: 0; /* Align the container to the left */
 }
 
 canvas {
-    max-width: 100%; /* Ensure canvas fits within viewport */
-    height: auto; /* Allow canvas to adjust its height */
-    margin: auto; /* Center canvas */
+    display: block;
+    margin: 0 auto; /* Center canvas horizontally */
 }
