@@ -8,6 +8,7 @@
 /* Default styles */
 body, html {
     height: 100%;
+    overflow: hidden; /* Hide default body scrollbar */
 }
 
 .pdf-container {
