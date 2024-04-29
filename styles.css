@@ -1,14 +1,18 @@
 /* Apply border-box box model to all elements */
 * {
     box-sizing: border-box;
+}
+
+/* Reset margin and padding for body and html */
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 /* Default styles */
-body, html {
-    height: 100%; /* Ensure full height of the viewport */
-    overflow-x: hidden; /* Disable horizontal scrolling */
+body {
     background-color: #fff; /* Set background color to white */
 }
 
@@ -20,7 +24,6 @@ body, html {
     justify-content: flex-start; /* Align content to the top of the page */
     align-items: flex-start; /* Align content to the top of the page */
     padding: 20px; /* Add some padding for space */
-    box-sizing: border-box; /* Ensure padding is included in container size */
     position: fixed; /* Position the container fixed to the top */
     top: 0; /* Align the container to the top */
     left: 0; /* Align the container to the left */
