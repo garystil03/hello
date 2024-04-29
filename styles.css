@@ -28,13 +28,13 @@ canvas {
 /* Media queries for various devices and screen sizes */
 @media screen and (max-width: 320px) { /* iPhone SE */
     .page-container {
-        max-width: 90%;
+        max-width: 60%;
     }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
     .page-container {
-        max-width: 85%;
+        max-width: 65%;
     }
 }
 
