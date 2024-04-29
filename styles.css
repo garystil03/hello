@@ -27,19 +27,21 @@ canvas {
 @media screen and (max-width: 320px) { /* iPhone SE */
     .page-container {
         max-width: 90%;
+        padding: 0 5%; /* Adjust padding */
     }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
     .page-container {
         max-width: 85%;
+        padding: 0 7.5%; /* Adjust padding */
     }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1200px) { /* Larger screens up to 1200px */
     .page-container {
-        max-width: calc(80% - 40px); /* Adjust padding based on screen width */
-        padding: 0 20px; /* Add padding to each side */
+        max-width: 90%; /* Adjust max-width */
+        padding: 0 10%; /* Adjust padding */
     }
 }
 
