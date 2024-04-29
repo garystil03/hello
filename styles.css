@@ -1,33 +1,50 @@
 /* Apply border-box box model to all elements */
 * {
     box-sizing: border-box;
-}
-
-/* Reset margin and padding for body and html */
-body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Disable horizontal scrolling */
-    background-color: #fff; /* Set background color to white */
+}
+
+/* Default styles */
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
 }
 
 .page-container {
+    width: 100%;
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: flex-start; /* Align content to the top vertically */
-    height: 100%; /* Use full height of the viewport */
-}
-
-.pdf-container {
-    overflow-y: auto; /* Enable vertical scrolling if necessary */
-    max-width: 1000px; /* Adjust this value as needed */
-    padding: 20px; /* Add padding if needed */
+    justify-content: center;
 }
 
 canvas {
-    display: block;
-    max-width: 100%; /* Ensure canvas fits within container */
-    height: auto; /* Allow canvas to adjust its height */
+    max-width: 100%;
+    height: auto;
     margin: 0 auto; /* Center canvas horizontally */
+}
+
+/* Media queries for various devices and screen sizes */
+@media screen and (max-width: 320px) { /* iPhone SE */
+    .page-container {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
+    .page-container {
+        max-width: 85%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1600px) { /* Larger screens */
+    .page-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1601px) { /* Extra-large desktops */
+    .page-container {
+        max-width: 80%;
+    }
 }
