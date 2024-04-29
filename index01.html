@@ -51,53 +51,46 @@
     <div id="pdf-container"></div>
 
     <!-- Load PDF.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
     
     <script>
         // Specify the location of the PDF.js worker script
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
         // Function to initialize PDF.js and load the PDF file
-        function loadPdf(url) {
+        async function loadPdf(url) {
             const pdfContainer = document.getElementById('pdf-container');
 
-            // For other browsers, use PDF.js
-            pdfjsLib.getDocument(url).promise
-                .then(function(pdfDoc) {
-                    // Load the first page
-                    pdfDoc.getPage(1).then(function(page) {
-                        // Create a canvas element
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
+            try {
+                const pdfDoc = await pdfjsLib.getDocument(url).promise;
+                const page = await pdfDoc.getPage(1);
+                const viewport = page.getViewport({ scale: 1});
+                
+                // Create a canvas element
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
 
-                        // Set canvas width and height to match original document dimensions
-                        const viewport = page.getViewport({ scale: 1});
-                        canvas.width = viewport.width;
-                        canvas.height = viewport.height;
+                // Set canvas width and height to match original document dimensions
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
 
-                        // Append the canvas to the PDF container
-                        pdfContainer.appendChild(canvas);
+                // Append the canvas to the PDF container
+                pdfContainer.appendChild(canvas);
 
-                        // Render the PDF page onto the canvas
-                        const renderContext = {
-                            canvasContext: context,
-                            viewport: viewport,
-                        };
-                        page.render(renderContext).promise.then(function() {
-                            console.log('Page rendered');
-                        }).catch(function(error) {
-                            console.error('Error rendering page:', error);
-                        });
+                // Render the PDF page onto the canvas
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport,
+                };
+                await page.render(renderContext).promise;
 
-                        // Make the document vertically scrollable if necessary
-                        if (viewport.height > window.innerHeight) {
-                            pdfContainer.style.overflowY = 'scroll';
-                        }
-                    });
-                })
-                .catch(function(error) {
-                    console.error('Error loading PDF:', error);
-                });
+                // Make the document vertically scrollable if necessary
+                if (viewport.height > window.innerHeight) {
+                    pdfContainer.style.overflowY = 'scroll';
+                }
+            } catch (error) {
+                console.error('Error loading PDF:', error);
+            }
         }
 
         // Call the loadPdf function with the URL of your PDF file
