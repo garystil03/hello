@@ -11,9 +11,12 @@ body, html {
     overflow: hidden; /* Hide default body scrollbar */
 }
 
-.pdf-container {
+.page-container {
     max-width: 1000px; /* Limit maximum width */
     margin: 0 auto; /* Center horizontally */
+}
+
+.pdf-container {
     height: 100%; /* Occupy full height of the viewport */
     overflow-y: scroll; /* Enable vertical scrolling */
     -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
