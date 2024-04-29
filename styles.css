@@ -8,36 +8,24 @@
 /* Default styles */
 body, html {
     height: 100%;
+    overflow: hidden; /* Hide default body scrollbar */
 }
 
-.pdf-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align to the top vertically */
+.page-container {
+    max-width: 1000px; /* Limit maximum width */
+    margin: 0 auto; /* Center horizontally */
     height: 100%; /* Occupy full height of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.page-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
 }
 
 canvas {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     margin: 0 auto; /* Center canvas horizontally */
-}
-
-/* Media queries for various devices and screen sizes */
-@media screen and (max-width: 1000px) {
-    .pdf-container {
-        padding: 0 20px; /* Add padding to the sides */
-    }
-
-    canvas {
-        max-width: calc(100% - 40px); /* Adjust max-width for canvas */
-    }
-}
-
-/* Media query for larger screens */
-@media screen and (min-width: 1001px) {
-    .pdf-container {
-        max-width: 1000px; /* Limit width to 1000px */
-        margin: 0 auto; /* Center horizontally */
-    }
 }
