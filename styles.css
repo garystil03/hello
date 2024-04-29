@@ -12,7 +12,6 @@ body, html {
 }
 
 .page-container {
-    max-width: 1000px; /* Limit maximum width */
     margin: 0 auto; /* Center horizontally */
     height: 100%; /* Occupy full height of the viewport */
     overflow-y: auto; /* Enable vertical scrolling */
