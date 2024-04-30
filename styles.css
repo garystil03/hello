@@ -8,14 +8,16 @@
 /* Default styles */
 .pdf-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start; /* Align items to the top */
 }
 
 .page-container {
+    max-width: 1200px;
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 0 5%; /* Default padding */
 }
 
 canvas {
@@ -24,29 +26,26 @@ canvas {
 }
 
 /* Media queries for various devices and screen sizes */
-@media screen and (max-width: 320px) { /* iPhone SE */
+@media screen and (max-width: 1200px) {
     .page-container {
-        max-width: 90%;
         padding: 0 5%; /* Adjust padding */
     }
 }
 
-@media screen and (min-width: 321px) and (max-width: 768px) { /* iPhones and iPads */
+@media screen and (min-width: 1201px) {
     .page-container {
-        max-width: 85%;
-        padding: 0 7.5%; /* Adjust padding */
+        padding: 0 calc((100% - 1200px) / 2); /* Responsive padding */
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1200px) { /* Larger screens up to 1200px */
+@media screen and (max-width: 768px) {
     .page-container {
-        max-width: 90%; /* Adjust max-width */
-        padding: 0 10%; /* Adjust padding */
+        padding: 0 15px; /* Adjust padding */
     }
 }
 
-@media screen and (min-width: 1201px) { /* Screens wider than 1200px */
+@media screen and (max-width: 320px) {
     .page-container {
-        max-width: 1200px; /* Limit width to 1200px */
+        padding: 0 10px; /* Adjust padding */
     }
 }
