@@ -27,7 +27,7 @@ body, html {
 
 canvas {
   display: block;
-  max-width: 100%; /* Ensure canvas fills the container */
-  height: auto; /* Allow canvas to adjust its height */
+  width: auto; /* Ensure canvas fills the container width */
+  height: 100vh; /* Set canvas height to full viewport height */
+  image-rendering: pixelated; /* Prevent browser from smoothing the image */
 }
-
