@@ -18,6 +18,12 @@ body, html {
   max-width: 1200px; /* Set maximum width of PDF container */
   width: 100%; /* Use full width of the viewport */
   margin: 0 auto; /* Center the container horizontally */
+  padding-top: 20px; /* Add padding to the top */
+}
+
+.page-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
 }
 
 canvas {
@@ -25,4 +31,3 @@ canvas {
   width: 100%; /* Ensure canvas fills the container */
   height: auto; /* Allow canvas to adjust its height */
 }
-
