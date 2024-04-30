@@ -8,21 +8,16 @@ function loadPdf(url) {
   // For other browsers, use PDF.js
   pdfjsLib.getDocument(url).promise
   .then(function(pdfDoc) {
-    // Load the first page (since it's a single-page document)
+    // Load the first page
     pdfDoc.getPage(1).then(function(page) {
       // Create a canvas element
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
 
-      // Set canvas width and height to match the container's dimensions
-      const containerWidth = pdfContainer.clientWidth;
-      const containerHeight = window.innerHeight; // Adjust as needed
-      const viewport = page.getViewport({ scale: 1 });
-      const scale = containerWidth / viewport.width;
-      const scaledViewport = page.getViewport({ scale });
-
-      canvas.width = containerWidth;
-      canvas.height = containerHeight;
+      // Set canvas width and height to match original document dimensions
+      const viewport = page.getViewport({ scale: 1});
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
 
       // Append the canvas to the PDF container
       pdfContainer.appendChild(canvas);
@@ -30,7 +25,7 @@ function loadPdf(url) {
       // Render the PDF page onto the canvas
       const renderContext = {
         canvasContext: context,
-        viewport: scaledViewport,
+        viewport: viewport,
       };
       page.render(renderContext).promise.then(function() {
         console.log('Page rendered');
@@ -39,8 +34,8 @@ function loadPdf(url) {
       });
 
       // Make the document vertically scrollable if necessary
-      if (scaledViewport.height > containerHeight) {
-        document.body.style.overflowY = 'scroll';
+      if (viewport.height > window.innerHeight) {
+        pdfContainer.style.overflowY = 'scroll';
       }
     });
   })
