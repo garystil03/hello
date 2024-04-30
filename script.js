@@ -5,9 +5,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs
 function loadPdf(url) {
   const pdfContainer = document.getElementById('pdf-container');
 
-  // For other browsers, use PDF.js
-  pdfjsLib.getDocument(url).promise
-  .then(function(pdfDoc) {
+  // Function to load PDF content
+  function loadPdfContent(pdfDoc) {
     // Load the first page
     pdfDoc.getPage(1).then(function(page) {
       // Create a canvas element
@@ -38,6 +37,15 @@ function loadPdf(url) {
         pdfContainer.style.overflowY = 'scroll';
       }
     });
+  }
+
+  // For other browsers, use PDF.js
+  pdfjsLib.getDocument(url).promise
+  .then(function(pdfDoc) {
+    // Show the PDF container
+    pdfContainer.style.display = 'flex';
+    // Load PDF content
+    loadPdfContent(pdfDoc);
   })
   .catch(function(error) {
     console.error('Error loading PDF:', error);
