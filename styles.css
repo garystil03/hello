@@ -1,0 +1,33 @@
+/* Apply border-box box model to all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Default styles */
+body, html {
+  height: 100%; /* Ensure full height of the viewport */
+  overflow: hidden; /* Hide default body scrollbar */
+  background-color: #fff; /* Set background color to white */
+}
+
+#pdf-container {
+  overflow-y: auto; /* Enable vertical scrolling if necessary */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  max-width: 1200px; /* Set maximum width of PDF container */
+  width: 100%; /* Use full width of the viewport */
+  margin: 0 auto; /* Center the container horizontally */
+  padding-top: 20px; /* Add padding to the top */
+}
+
+.page-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+}
+
+canvas {
+  display: block;
+  width: 100%; /* Ensure canvas fills the container */
+  height: auto; /* Allow canvas to adjust its height */
+}
