@@ -1,3 +1,6 @@
+// Specify the location of the PDF.js worker script
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
 // Function to initialize PDF.js and load the PDF file
 function loadPdf(url) {
   const pdfContainer = document.getElementById('pdf-container');
@@ -26,12 +29,7 @@ function loadPdf(url) {
       const renderContext = {
         canvasContext: context,
         viewport: scaledViewport,
-        // Adjust the rendering settings as needed
-        // For example, you can increase the quality by setting 'renderingIntent' to 'default' or 'high-quality'
-        // See: https://mozilla.github.io/pdf.js/api/draft/global.html#RenderingIntent
-        renderingIntent: 'high-quality', // or 'default'
       };
-
       page.render(renderContext).promise.then(function() {
         console.log('Page rendered');
       }).catch(function(error) {
