@@ -9,7 +9,7 @@
 .pdf-container {
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto; /* Center the container horizontally */
-    padding: 20px 0; /* Add padding to the top and bottom */
+    padding: 20px 5%; /* Add padding to the top and bottom, dynamically adjust left and right padding */
     max-width: 1200px; /* Set maximum width */
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
 .page-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center content horizontally */
 }
 
 canvas {
