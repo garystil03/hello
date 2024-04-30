@@ -29,8 +29,7 @@ function loadPdf(url) {
         // Adjust the rendering settings as needed
         // For example, you can increase the quality by setting 'renderingIntent' to 'default' or 'high-quality'
         // See: https://mozilla.github.io/pdf.js/api/draft/global.html#RenderingIntent
-        // More options can be found in the PDF.js documentation
-        renderingIntent: 'high-quality', // or 'high-quality'
+        renderingIntent: 'high-quality', // or 'default'
       };
 
       page.render(renderContext).promise.then(function() {
