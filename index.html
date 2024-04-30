@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>astrolabe-sketches</title>
@@ -18,33 +20,33 @@ gtag('config', 'G-DXBHGF3P8R');
 <style>
 /* Apply border-box box model to all elements */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 /* Default styles */
 body, html {
-    height: 100%; /* Ensure full height of the viewport */
-    overflow: hidden; /* Hide default body scrollbar */
-    background-color: #fff; /* Set background color to white */
+height: 100%; /* Ensure full height of the viewport */
+overflow: hidden; /* Hide default body scrollbar */
+background-color: #fff; /* Set background color to white */
 }
 
 #pdf-container {
-    overflow-y: auto; /* Enable vertical scrolling if necessary */
-    overflow-x: hidden; /* Disable horizontal scrolling */
-    width: 100%; /* Use full width of the viewport */
-    height: 100%; /* Use full height of the viewport */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+overflow-y: auto; /* Enable vertical scrolling if necessary */
+overflow-x: hidden; /* Disable horizontal scrolling */
+width: 100%; /* Use full width of the viewport */
+height: 100%; /* Use full height of the viewport */
+display: flex;
+justify-content: center; /* Center content horizontally */
+align-items: center; /* Center content vertically */
 }
 
 canvas {
-    display: block;
-    max-width: 100%; /* Ensure canvas fits within viewport */
-    height: auto; /* Allow canvas to adjust its height */
-    margin: auto; /* Center canvas */
+display: block;
+max-width: 100%; /* Ensure canvas fits within viewport */
+height: auto; /* Allow canvas to adjust its height */
+margin: auto; /* Center canvas */
 }
 </style>
 </head>
@@ -52,60 +54,57 @@ canvas {
 <div id="pdf-container"></div>
 
 <!-- Load PDF.js library -->
-<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.mjs"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
-<script type="module">
+<script>
 // Specify the location of the PDF.js worker script
-import { GlobalWorkerOptions } from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.mjs';
-GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
 // Function to initialize PDF.js and load the PDF file
 function loadPdf(url) {
-    const pdfContainer = document.getElementById('pdf-container');
+const pdfContainer = document.getElementById('pdf-container');
 
-    // For other browsers, use PDF.js
-    import { getDocument } from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.mjs';
-    getDocument(url).promise
-    .then(function(pdfDoc) {
-        // Load the first page
-        pdfDoc.getPage(1).then(function(page) {
-            // Create a canvas element
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
+// For other browsers, use PDF.js
+pdfjsLib.getDocument(url).promise
+.then(function(pdfDoc) {
+// Load the first page
+pdfDoc.getPage(1).then(function(page) {
+// Create a canvas element
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
 
-            // Set canvas width and height to match original document dimensions
-            const viewport = page.getViewport({ scale: 1});
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
+// Set canvas width and height to match original document dimensions
+const viewport = page.getViewport({ scale: 1});
+canvas.width = viewport.width;
+canvas.height = viewport.height;
 
-            // Append the canvas to the PDF container
-            pdfContainer.appendChild(canvas);
+// Append the canvas to the PDF container
+pdfContainer.appendChild(canvas);
 
-            // Render the PDF page onto the canvas
-            const renderContext = {
-                canvasContext: context,
-                viewport: viewport,
-            };
-            page.render(renderContext).promise.then(function() {
-                console.log('Page rendered');
-            }).catch(function(error) {
-                console.error('Error rendering page:', error);
-            });
+// Render the PDF page onto the canvas
+const renderContext = {
+canvasContext: context,
+viewport: viewport,
+};
+page.render(renderContext).promise.then(function() {
+console.log('Page rendered');
+}).catch(function(error) {
+console.error('Error rendering page:', error);
+});
 
-            // Make the document vertically scrollable if necessary
-            if (viewport.height > window.innerHeight) {
-                pdfContainer.style.overflowY = 'scroll';
-            }
-        });
-    })
-    .catch(function(error) {
-        console.error('Error loading PDF:', error);
-    });
+// Make the document vertically scrollable if necessary
+if (viewport.height > window.innerHeight) {
+pdfContainer.style.overflowY = 'scroll';
+}
+});
+})
+.catch(function(error) {
+console.error('Error loading PDF:', error);
+});
 }
 
 // Call the loadPdf function with the URL of your PDF file
 loadPdf('astroSite.pdf');
 </script>
-
 </body>
 </html>
