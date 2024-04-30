@@ -7,9 +7,6 @@
 
 /* Default styles */
 .pdf-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align items to the top */
     max-width: 1200px; /* Set maximum width */
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto; /* Center the container horizontally */
@@ -23,23 +20,14 @@
 }
 
 canvas {
-    max-width: 100%; /* Ensure canvas fills the container */
+    max-width: calc(100% - 40px); /* Ensure canvas fills the container */
+    width: 100%;
     height: auto; /* Allow canvas to adjust its height */
+    margin-left: auto; /* Align canvas to the right */
+    margin-right: auto; /* Align canvas to the left */
 }
 
 /* Media queries for various devices and screen sizes */
-@media screen and (max-width: 1200px) {
-    .pdf-container {
-        padding: 20px 5%; /* Adjust padding */
-    }
-}
-
-@media screen and (min-width: 1201px) {
-    .pdf-container {
-        padding: 20px calc((100% - 1200px) / 2); /* Responsive padding */
-    }
-}
-
 @media screen and (max-width: 768px) {
     .pdf-container {
         padding: 20px 15px; /* Adjust padding */
