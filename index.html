@@ -58,7 +58,9 @@ margin: auto; /* Center canvas */
 
 <script>
 // Specify the location of the PDF.js worker script
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+</script>
+
 
 // Function to initialize PDF.js and load the PDF file
 function loadPdf(url) {
