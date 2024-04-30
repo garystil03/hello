@@ -11,6 +11,8 @@
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px 0; /* Add padding to the top and bottom */
+    display: flex;
+    justify-content: center;
 }
 
 .page-container {
@@ -20,11 +22,9 @@
 }
 
 canvas {
-    max-width: calc(100% - 40px); /* Ensure canvas fills the container */
-    width: 100%;
+    width: auto; /* Allow canvas to adjust its width */
+    max-width: 100%; /* Ensure canvas fills the container */
     height: auto; /* Allow canvas to adjust its height */
-    margin-left: auto; /* Align canvas to the right */
-    margin-right: auto; /* Align canvas to the left */
 }
 
 /* Media queries for various devices and screen sizes */
