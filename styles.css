@@ -7,10 +7,10 @@
 
 /* Default styles */
 .pdf-container {
+    max-width: 1200px; /* Set maximum width */
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px 5%; /* Add padding to the top and bottom, dynamically adjust left and right padding */
-    max-width: 1200px; /* Set maximum width */
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
@@ -19,7 +19,7 @@
 .page-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
 }
 
 canvas {
@@ -29,14 +29,14 @@ canvas {
 }
 
 /* Media queries for various devices and screen sizes */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     .pdf-container {
-        padding: 20px 15px; /* Adjust padding */
+        padding: 20px; /* Adjust padding for screens up to 1200px wide */
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 1201px) {
     .pdf-container {
-        padding: 20px 10px; /* Adjust padding */
+        padding: 20px calc((100% - 1200px) / 2); /* Dynamically adjust padding for screens wider than 1200px */
     }
 }
