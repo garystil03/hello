@@ -48,4 +48,4 @@ function loadPdf(url) {
 }
 
 // Call the loadPdf function with the URL of your PDF file
-loadPdf('astroSite-compressed.pdf');
+loadPdf('astroSite3.pdf');
