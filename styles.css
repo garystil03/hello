@@ -9,10 +9,11 @@
 .pdf-container {
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto; /* Center the container horizontally */
-    padding: 20px 5%; /* Add padding to the top and bottom, dynamically adjust left and right padding */
+    padding: 20px 0; /* Add padding to the top and bottom */
     max-width: 1200px; /* Set maximum width */
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* Align items to the top */
 }
 
 .page-container {
