@@ -10,42 +10,44 @@
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
+    max-width: 1100px; /* Set maximum width */
+    width: 100%; /* Use full width of the viewport */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px 5%; /* Add padding to the top and sides */
 }
 
 .page-container {
-    max-width: 1200px;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 5%; /* Default padding */
 }
 
 canvas {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Ensure canvas fills the container */
+    height: auto; /* Allow canvas to adjust its height */
 }
 
 /* Media queries for various devices and screen sizes */
 @media screen and (max-width: 1200px) {
-    .page-container {
-        padding: 0 5%; /* Adjust padding */
+    .pdf-container {
+        padding: 20px 5%; /* Adjust padding */
     }
 }
 
 @media screen and (min-width: 1201px) {
-    .page-container {
-        padding: 0 calc((100% - 1200px) / 2); /* Responsive padding */
+    .pdf-container {
+        padding: 20px calc((100% - 1200px) / 2); /* Responsive padding */
     }
 }
 
 @media screen and (max-width: 768px) {
-    .page-container {
-        padding: 0 15px; /* Adjust padding */
+    .pdf-container {
+        padding: 20px 15px; /* Adjust padding */
     }
 }
 
 @media screen and (max-width: 320px) {
-    .page-container {
-        padding: 0 10px; /* Adjust padding */
+    .pdf-container {
+        padding: 20px 10px; /* Adjust padding */
     }
 }
