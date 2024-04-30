@@ -3,7 +3,6 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs
 
 // Function to initialize PDF.js and load the PDF file
 function loadPdf(url) {
-  const pdfContainer = document.getElementById('pdf-container');
   const pageContainer = document.querySelector('.page-container');
 
   // For other browsers, use PDF.js
@@ -36,7 +35,7 @@ function loadPdf(url) {
 
       // Make the document vertically scrollable if necessary
       if (viewport.height > window.innerHeight) {
-        pdfContainer.style.overflowY = 'scroll';
+        document.body.style.overflowY = 'scroll';
       }
     });
   })
