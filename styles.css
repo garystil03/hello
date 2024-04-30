@@ -11,7 +11,7 @@
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px 0; /* Add padding to the top and bottom */
-    display: flex;
+    display: none; /* Hide the PDF container initially */
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
 }
@@ -26,17 +26,4 @@ canvas {
     width: auto; /* Allow canvas to adjust its width */
     max-width: 100%; /* Ensure canvas fills the container */
     height: auto; /* Allow canvas to adjust its height */
-}
-
-/* Media queries for various devices and screen sizes */
-@media screen and (max-width: 768px) {
-    .pdf-container {
-        padding: 20px 15px; /* Adjust padding for smaller screens */
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .pdf-container {
-        padding: 20px 10px; /* Adjust padding for smaller screens */
-    }
 }
