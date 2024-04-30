@@ -10,7 +10,7 @@
     max-width: 1200px; /* Set maximum width */
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto; /* Center the container horizontally */
-    padding: 20px 5%; /* Add padding to the top and bottom, dynamically adjust left and right padding */
+    padding: 20px 0; /* Add padding to the top and bottom */
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
@@ -29,14 +29,14 @@ canvas {
 }
 
 /* Media queries for various devices and screen sizes */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
     .pdf-container {
-        padding: 20px; /* Adjust padding for screens up to 1200px wide */
+        padding: 20px 15px; /* Adjust padding for smaller screens */
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (max-width: 320px) {
     .pdf-container {
-        padding: 20px calc((100% - 1200px) / 2); /* Dynamically adjust padding for screens wider than 1200px */
+        padding: 20px 10px; /* Adjust padding for smaller screens */
     }
 }
