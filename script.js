@@ -14,9 +14,13 @@ function loadPdf(url) {
       const context = canvas.getContext('2d');
 
       // Set canvas width and height to match original document dimensions
-      const viewport = page.getViewport({ scale: 1});
+      const viewport = page.getViewport({ scale: 1 });
       canvas.width = viewport.width;
       canvas.height = viewport.height;
+
+      // Calculate left margin to center canvas horizontally
+      const marginLeft = (pdfContainer.offsetWidth - viewport.width) / 2;
+      canvas.style.marginLeft = `${marginLeft}px`;
 
       // Append the canvas to the PDF container
       pdfContainer.appendChild(canvas);
