@@ -4,7 +4,6 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs
 // Function to initialize PDF.js and load the PDF file
 function loadPdf(url) {
   const pdfContainer = document.getElementById('pdf-container');
-  const loadingIndicator = document.getElementById('loading-indicator');
 
   // Function to load PDF content
   function loadPdfContent(pdfDoc) {
@@ -32,16 +31,11 @@ function loadPdf(url) {
       };
       page.render(renderContext).promise.then(function() {
         console.log('Page rendered');
-        // Hide loading indicator once rendering is complete
-        loadingIndicator.style.display = 'none';
       }).catch(function(error) {
         console.error('Error rendering page:', error);
       });
     });
   }
-
-  // Show loading indicator
-  loadingIndicator.style.display = 'block';
 
   // For other browsers, use PDF.js
   pdfjsLib.getDocument(url).promise
@@ -53,8 +47,6 @@ function loadPdf(url) {
   })
   .catch(function(error) {
     console.error('Error loading PDF:', error);
-    // Hide loading indicator on error
-    loadingIndicator.style.display = 'none';
   });
 }
 
