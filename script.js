@@ -19,9 +19,8 @@ function loadPdf(url) {
       canvas.width = viewport.width;
       canvas.height = viewport.height;
 
-      // Calculate left margin to center canvas horizontally
-      const marginLeft = (pdfContainer.offsetWidth - viewport.width) / 2;
-      canvas.style.marginLeft = `${marginLeft}px`;
+      // Center canvas horizontally
+      canvas.style.margin = '0 auto';
 
       // Append the canvas to the PDF container
       pdfContainer.appendChild(canvas);
@@ -38,11 +37,6 @@ function loadPdf(url) {
       }).catch(function(error) {
         console.error('Error rendering page:', error);
       });
-
-      // Make the document vertically scrollable if necessary
-      if (viewport.height > window.innerHeight) {
-        pdfContainer.style.overflowY = 'scroll';
-      }
     });
   }
 
