@@ -4,87 +4,28 @@
 /* Apply the imported font family to the body */
 body {
     font-family: 'Roboto Light', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Set background color of the table to white */
+/* Center the table container horizontally */
+.table-container {
+    margin: 0 auto; /* This will center the container */
+    width: fit-content; /* Adjusts the width of the container based on its content */
+}
+
+/* Set background color of the table to white and define table width */
 table {
     border-collapse: collapse;
     width: 1200px;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
+    margin: auto; /* This centers the table within the container */
 }
 
 /* Set padding and text alignment for table cells */
 th, td {
-    padding: 8px; /* Apply 8px padding to all sides */
-    text-align: left;
-    max-width: 800px; /* Ensure maximum width */
-    min-width: 100px; /* Ensure minimum width */
-}
-
-/* Set background color for even rows */
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Highlight rows on hover */
-tr:hover {
-    background-color: #ddd;
-}
-
-/* Apply Roboto Light font style to all table rows */
-tr {
-    font-family: 'Roboto Light', sans-serif;
-}
-
-/* Set specific widths for cells in each row */
-tr:nth-child(1) td {
-    width: 800px;
-}
-
-tr:nth-child(2) td {
-    width: 100px;
-}
-
-/* Additional comments can be added as needed */
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Light&display=swap');
-
-/* Apply the imported font family to the body */
-body {
-    font-family: 'Roboto Light', sans-serif;
-}
-
-/* Set background color of the table to white */
-table {
-    border-collapse: collapse;
-    width: 1200px;
-    background-color: #ffffff; /* White background */
-}
-
-th, td {
     padding: 8px;
     text-align: left;
-    max-width: 800px; /* Ensure minimum width */
-    min-width: 100px; /* Ensure minimum width */
-}
-th, td {
-    padding: 8px;
-    text-align: left;
-    max-width: 800px; /* Ensure maximum width */
-    min-width: 100px; /* Ensure minimum width */
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #ddd;
-}
-
-/* Apply Roboto Light font style to all table rows */
-tr {
-    font-family: 'Roboto Light', sans-serif;
 }
 
 /* Set specific widths for cells in each row */
@@ -100,132 +41,7 @@ tr:nth-child(3) td {
     width: 300px;
 }
 
-/* Add more rules for other rows as needed */
-/* Apply the imported font family to the body */
-body {
-    font-family: 'Roboto Light', sans-serif;
-}
-
-/* Rest of your CSS styles for the table */
-table {
-    border-collapse: collapse;
-    width: 1200px;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-}
-
+/* Additional styling for even rows */
 tr:nth-child(even) {
     background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #ddd;
-}
-
-/* Apply Roboto Light font style to all table rows */
-tr {
-    font-family: 'Roboto Light', sans-serif;
-}
-
-/* Apply fixed width to cells */
-td, th {
-    width: 200px; /* Adjust the width as needed */
-    max-width: 200px; /* Ensure maximum width */
-    min-width: 200px; /* Ensure minimum width */
-}
-
-/* Apply styles to specific rows */
-tr:nth-child(odd) {
-    background-color: #fff; /* Change background color for odd rows */
-    font-style: italic; /* Apply italic style to odd rows */
-    font-size: 20px; /* Set font size for odd rows */
-}
-
-/* Adjust font size and style for specific rows */
-tr:nth-child(3) {
-    font-size: 30px; /* Increase font size for the third row */
-}
-
-tr:nth-child(7) {
-    font-size: 20px; /* Reset font size for the seventh row */
-    font-style: normal; /* Remove italic style for the seventh row */
-}
-/* Apply the imported font family to the body */
-body {
-    font-family: 'Roboto Light', sans-serif;
-}
-
-/* Rest of your CSS styles for the table */
-table {
-    border-collapse: collapse;
-    width: 1200px;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #ddd;
-}
-
-/* Apply Roboto Light font style to all table rows */
-tr {
-    font-family: 'Roboto Light', sans-serif;
-}
-
-/* Apply styles to specific rows */
-tr:nth-child(odd) {
-    background-color: #fff; /* Change background color for odd rows */
-    font-style: italic; /* Apply italic style to odd rows */
-    font-size: 20px; /* Set font size for odd rows */
-}
-
-/* Adjust font size and style for specific rows */
-tr:nth-child(3) {
-    font-size: 30px; /* Increase font size for the third row */
-}
-
-tr:nth-child(7) {
-    font-size: 20px; /* Reset font size for the seventh row */
-    font-style: normal; /* Remove italic style for the seventh row */
-}
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Light&display=swap');
-
-/* Apply the imported font family to the body */
-body {
-    font-family: 'Roboto Light', sans-serif;
-}
-
-/* Rest of your CSS styles for the table */
-table {
-    border-collapse: collapse;
-    width: 1200px;
-    font-family: 'Roboto Light', sans-serif;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #ddd;
-}
-
-/* Apply Roboto Light font style to all table rows */
-tr {
-    font-family: 'Roboto Light', sans-serif;
 }
