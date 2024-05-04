@@ -22,9 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var cell3_1 = row3.insertCell();
     var cell3_2 = row3.insertCell();
     var cell3_3 = row3.insertCell();
-    cell3_1.textContent = "Row 3, Col 1 text";
+    cell3_1.textContent = "Inspired by the Islamic scholar Abu Ishaq Ibrahim al-Zarqali (b. 1029), I sketched construction lines to create astrolabes for use on each of the eight planets and Pluto, appending his trigonometry calculations with contemporary NASA data and JavaScript. Variation between the digital drawings results from each planet’s unique obliquity to orbit in addition to their distinct rotational and orbital periods.";
     cell3_2.textContent = "Row 3, Col 2 text";
-    cell3_3.textContent = "Row 3, Col 3 text";
+    cell3_3.textContent = "Astrolabes for use on Mercury, Venus, Mars ... and even Pluto
+Gary James Stilwell MD
+astrolabe.sketches@gmail.com https://astrolabe-sketches.site";
     row3.style.fontSize = "30px";
 
     // Row 4 (single column)
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Row 7 (single column) - Roboto Light Italic, font size: 20px
     var row7 = table.insertRow();
     var cell7_1 = row7.insertCell();
-    cell7_1.textContent = "Row 7 text";
+    cell7_1.textContent = "MERCURY";
     row7.style.fontSize = "20px";
     row7.style.fontStyle = "italic";
 
@@ -66,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var cell10_3 = row10.insertCell();
     cell10_1.textContent = "Row 10, Col 1 text";
     cell10_2.textContent = "Row 10, Col 2 text";
-    cell10_3.textContent = "Row 10, Col 3 text";
+    cell10_3.textContent = "Row 10, VENUS";
     row10.style.fontSize = "20px";
     row10.style.fontStyle = "italic";
 
