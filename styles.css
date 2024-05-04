@@ -1,0 +1,44 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: rgb(80, 80, 80);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    border: none;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 576px) {
+    /* Styles for screens larger than 576px (e.g., mobile phones in landscape mode) */
+    table {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* Styles for screens larger than 768px (e.g., tablets) */
+    table {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* Styles for screens larger than 992px (e.g., laptops) */
+    table {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* Styles for screens larger than 1200px (e.g., desktops and monitors) */
+    table {
+        font-size: 22px;
+    }
+}
