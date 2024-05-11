@@ -1,0 +1,77 @@
+body, html {
+     margin: 0;
+     padding: 0;
+     height: 100%;
+     display: flex;
+     justify-content: center; /* Center horizontally */
+     align-items: flex-start; /* Align to the top vertically */
+     font-family: 'Roboto', sans-serif; /* Set font family */
+     font-weight: 100; /* Specify font weight as Thin */
+ }
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    border: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 576px) {
+    /* Styles for mobile phones */
+    table {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    /* Styles for tablets */
+    table {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    /* Styles for laptops */
+    table {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    /* Styles for desktops */
+    table {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    /* Styles for monitors */
+    table {
+        font-size: 20px;
+    }
+}
