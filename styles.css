@@ -8,8 +8,9 @@ body, html {
      font-family: 'Roboto', sans-serif; /* Set font family */
      font-weight: 100; /* Specify font weight as Thin */
  }
-
-
+.smaller {
+    font-size: 20%;
+}
 .container {
     width: 100%;
     max-width: 1200px;
