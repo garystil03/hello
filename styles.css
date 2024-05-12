@@ -40,7 +40,7 @@ table {
 }
 
 th, td {
-    padding: 8px 4px; /* Adjust padding to reduce space horizontally */
+    padding: 4px; /* Adjust padding to reduce space horizontally */
     border-bottom: 1px solid #ddd;
     text-align: left;
     font-family: 'Roboto', sans-serif; /* Match the font family */
