@@ -34,6 +34,7 @@ body, html {
 
 table {
     width: 100%;
+    max-width: 100%; /* Ensure table width is responsive */
     border-collapse: collapse;
     margin-bottom: 20px;
     table-layout: fixed; /* Keep the table layout fixed */
