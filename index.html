@@ -43,12 +43,39 @@
         .section:last-child {
             margin-bottom: 30;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        @media screen and (max-width: 600px) {
+            th {
+                display: none;
+            }
+            tr {
+                display: block;
+                border-bottom: 1px solid #ddd;
+            }
+            td {
+                display: block;
+                text-align: right;
+                border-bottom: none;
+            }
+            td:first-child {
+                padding-top: 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
 
-     <section class="section">
+        <section class="section">
             <p><em>Where is Here?</em></p>
             <p>
                 Astrolabes for use on Mercury, Venus, Mars ... and even Pluto <br>
@@ -65,13 +92,29 @@
             <p>I made the multi-planet astrolabe series during my postgraduate studies at MIT in Dr. Elizabeth Cavicchi’s course EC.090 'Re-create Experiments from History: Inform the Future from the Past.’ I’m grateful for your interest in viewing my work and invite you to share the sketches with others who possess a passion for historical scientific instruments, astronomical art, and/or exploring Pluto.</p>
         </section>
 
+        <!-- Responsive Table -->
         <section class="section">
             <table>
-                <!-- Table content -->
+                <thead>
+                    <tr>
+                        <th>Planet</th>
+                        <th>Obliquity to Orbit (degrees)</th>
+                        <th>Rotational Period (Earth hours)</th>
+                        <th>Orbital Period (Earth days)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mercury</td>
+                        <td>0.034</td>
+                        <td>1408</td>
+                        <td>88.0</td>
+                    </tr>
+                    <!-- Add more rows for other planets -->
+                </tbody>
             </table>
         </section>
-
-       
+        <!-- End Responsive Table -->
 
         <!-- Content for Mercury -->
         <section class="section">
