@@ -45,4 +45,56 @@ th, td {
     text-align: left;
     font-family: 'Roboto', sans-serif; /* Match the font family */
     font-size: 16px; /* Match the font size */
+    color: rgb(0, 0, 80); /* Change font color to RGB(0,0,80) */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 576px) {
+    /* Styles for mobile phones */
+    table {
+        font-size: 12px;
+    }
+    th, td {
+        color: rgb(0, 0, 80); /* Override font color for th, td */
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    /* Styles for tablets */
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        color: rgb(0, 0, 80); /* Override font color for th, td */
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    /* Styles for laptops */
+    table {
+        font-size: 16px;
+    }
+    th, td {
+        color: rgb(0, 0, 80); /* Override font color for th, td */
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    /* Styles for desktops */
+    table {
+        font-size: 18px;
+    }
+    th, td {
+        color: rgb(0, 0, 80); /* Override font color for th, td */
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    /* Styles for monitors */
+    table {
+        font-size: 20px;
+    }
+    th, td {
+        color: rgb(0, 0, 80); /* Override font color for th, td */
+    }
 }
