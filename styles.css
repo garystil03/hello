@@ -61,6 +61,15 @@ img {
     height: auto;
 }
 
+.section:first-child {
+    padding-top: 25px;
+}
+
+.section:last-child {
+    padding-bottom: 25px;
+}
+
+
 
 
 /* Responsive styles */
