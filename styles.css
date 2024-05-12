@@ -51,6 +51,17 @@ th, td {
     color: rgb(0, 0, 80); /* Change font color to RGB(0,0,80) */
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* IE8 */
+}
+
+.container img {
+    max-width: 1200px;
+}
+
+
 /* Responsive styles */
 @media screen and (max-width: 576px) {
     /* Styles for mobile phones */
