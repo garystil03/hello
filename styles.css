@@ -1,13 +1,17 @@
+
+
 body, html {
-     margin: 0;
-     padding: 0;
-     height: 100%;
-     display: flex;
-     justify-content: center; /* Center horizontally */
-     align-items: flex-start; /* Align to the top vertically */
-     font-family: 'Roboto', sans-serif; /* Set font family */
-     font-weight: 100; /* Specify font weight as Thin */
- }
+    margin: 25px 0; /* Add 25px margin to top and bottom */
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100; /* Specify font weight as Thin */
+    font-size: 16px;
+    color: midnightblue; /* Change font color to midnight blue */
+}
 .smaller {
     font-size: 80%;
 }
