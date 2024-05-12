@@ -54,12 +54,13 @@ th, td {
 img {
     max-width: 100%;
     height: auto;
-    width: auto\9; /* IE8 */
 }
 
 .container img {
-    max-width: 1200px;
+    max-width: 100%;
+    height: auto;
 }
+
 
 
 /* Responsive styles */
