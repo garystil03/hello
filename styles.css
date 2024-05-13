@@ -1,5 +1,5 @@
 body, html {
-    margin: 25px 0; /* Add 25px margin to top and bottom */
+    margin: 10px 0; /* Add 25px margin to top and bottom */
     padding: 0;
     height: 100%;
     display: flex;
@@ -38,7 +38,7 @@ table {
     width: 100%;
     max-width: 100%; /* Ensure table width is responsive */
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     table-layout: fixed; /* Keep the table layout fixed */
 }
 
@@ -62,22 +62,22 @@ img {
 }
 
 .section:first-child {
-    padding-top: 25px;
+    padding-top: 100px;
 }
 
 .section:last-child {
-    padding-bottom: 25px;
+    padding-bottom: 100px;
 }
 
 .section:not(:has(img)) {
     padding-right: 40%;
 }
 
-.section table {
+/*.section table {
     margin-bottom: 40px; /* Add 40px of margin below the table */
     margin-top: 40px; 
 }
-
+*/
 
 
 /* Responsive styles */
