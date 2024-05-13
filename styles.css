@@ -69,9 +69,10 @@ img {
     padding-bottom: 25px;
 }
 
-.section:not(:last-child):not(:nth-last-child(2)):not(:nth-last-child(3)):not(:nth-last-child(4)):not(:nth-last-child(5)) {
+.section:not(:has(img)) {
     padding-right: 40%;
 }
+
 
 /* Responsive styles */
 @media screen and (max-width: 576px) {
