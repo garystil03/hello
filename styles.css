@@ -38,6 +38,7 @@ table {
     width: 100%;
     max-width: 100%; /* Ensure table width is responsive */
     border-collapse: collapse;
+    margin-top: 50px;
     margin-bottom: 50px;
     table-layout: fixed; /* Keep the table layout fixed */
 }
@@ -61,16 +62,17 @@ img {
     height: auto;
 }
 
-.section:first-child {
+/*.section:first-child {
     padding-top: 100px;
 }
 
 .section:last-child {
     padding-bottom: 100px;
-}
+}*/
 
 .section:not(:has(img)) {
     padding-right: 40%;
+    padding-left: 5%;
 }
 
 /*.section table {
