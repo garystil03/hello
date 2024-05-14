@@ -44,6 +44,8 @@ table {
     table-layout: fixed; /* Keep the table layout fixed */
 }
 
+
+
 th, td {
     padding: 4px; /* Adjust padding to reduce space horizontally */
     border-bottom: 1px solid #ddd;
@@ -64,18 +66,20 @@ img {
 }
 
 
-
-
-/* New styles for planet names */
-.section p em {
-    padding-right: 2%;
-    display: inline-block; /* Ensure inline-block for text alignment */
-    text-align: right; /* Align the planet name to the right */
-}
-
 .last-section-with-image {
     margin-bottom: 30px; /* Add margin to create space */
 }
+
+.planet-name {
+    text-align: right; /* Align the planet name to the right */
+    margin-top: 4px; /* Move the planet name upward by 4px */
+    padding-right: 5px; /* Add 5px padding to the right of the word */
+}
+
+
+
+
+
 
 
 
@@ -102,6 +106,10 @@ img {
     th, td {
         color: rgb(0, 0, 80); /* Override font color for th, td */
     }
+	.section.no-image {
+        padding-right: 10%;
+        padding-left: 2%;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -127,7 +135,7 @@ img {
         color: rgb(0, 0, 80); /* Override font color for th, td */
     }
     .section.no-image {
-        padding-right: 40%;
+        padding-right: 30%;
         padding-left: 2%;
     }
 }
