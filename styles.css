@@ -1,15 +1,15 @@
 body, html {
     margin-top: 5px; /* Add 25px margin to top and bottom */
-	margin-bottom: 100px; /* Add 25px margin to top and bottom */
+	margin-bottom: 25px; /* Add 25px margin to top and bottom */
     padding: 0;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300; /* Specify font weight as Extra Light*/
+    font-weight: 300; /* Specify font weight */
     font-size: 16px;
-    color: rgb(0,0,0); /* Change font color */
+    color: rgb(10,10,10); /* Change font color */
 }
 
 .smaller {
@@ -23,20 +23,50 @@ body, html {
     overflow-x: hidden;
 }
 
+
+
 .roboto-thin {
     font-family: "Roboto", sans-serif;
-    font-weight: 100;
+    font-weight: 100; /* Ensures thin weight */
     font-style: normal;
 }
 
 .roboto-thin-italic {
     font-family: "Roboto", sans-serif;
-    font-weight: 100;
+    font-weight: 100; /* Ensures thin weight */
     font-style: italic;
 }
 
+.roboto-extra-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200; /* Ensures extra light weight */
+  font-style: normal;
+}
+
+.roboto-extra-light-italic {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200; /* Ensures extra light weight */
+  font-style: italic;
+}
+
+.roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; /* Ensures extra light weight */
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; /* Ensures extra light weight */
+  font-style: italic;
+}
+
+
+
+
+
 table {
-    width: 90%; /* Reduce the width of the table */
+    width: 100%;
     max-width: 100%; /* Ensure table width is responsive */
     border-collapse: collapse;
     margin-top: 50px;
@@ -44,28 +74,13 @@ table {
     table-layout: fixed; /* Keep the table layout fixed */
 }
 
-th:first-child,
-td:first-child {
-    text-align: left; /* Align the first column to the left */
-    width: 30%; /* Adjust the width of the first column */
-}
-
-th:not(:first-child),
-td:not(:first-child) {
-    text-align: right; /* Align the rest of the columns to the right */
-    width: 14%; /* Adjust the width of the rest of the columns */
-}
-
-
-
-
 th, td {
     padding: 4px; /* Adjust padding to reduce space horizontally */
     border-bottom: 1px solid #ddd;
     text-align: left;
     font-family: 'Roboto', sans-serif; /* Match the font family */
     font-size: 16px; /* Match the font size */
-    color: rgb(0, 0, 40); /* Change font color to RGB(0,0,80) */
+    color: rgb(0, 0, 80); /* Change font color to RGB(0,0,80) */
 }
 
 img {
@@ -78,20 +93,38 @@ img {
     height: auto;
 }
 
+/*
+.section:first-child {
+    padding-top: 100px;
+}
+
+.section:last-child {
+    padding-bottom: 100px;
+}
+*/
+
+/*
+.section:not(:has(img)) {
+    padding-right: 40%;
+    padding-left: 5%;
+}
+*/
+
+.section.no-image {
+    padding-right: 40%;
+    padding-left: 2%;
+}
+
+/* New styles for planet names */
+.section p em {
+    padding-right: 2%;
+    display: inline-block; /* Ensure inline-block for text alignment */
+    text-align: right; /* Align the planet name to the right */
+}
 
 .last-section-with-image {
     margin-bottom: 30px; /* Add margin to create space */
 }
-
-.planet-name {
-    text-align: right; /* Align the planet name to the right */
-    margin-top: 14px; /* Move the planet name upward by 4px */
-    padding-right: 5px; /* Add 5px padding to the right of the word */
-}
-
-
-
-
 
 
 
@@ -121,10 +154,6 @@ img {
     th, td {
         color: rgb(0, 0, 80); /* Override font color for th, td */
     }
-	.section.no-image {
-        padding-right: 10%;
-        padding-left: 2%;
-    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -134,10 +163,6 @@ img {
     }
     th, td {
         color: rgb(0, 0, 80); /* Override font color for th, td */
-    }
-    .section.no-image {
-        padding-right: 20%;
-        padding-left: 2%;
     }
 }
 
@@ -149,10 +174,11 @@ img {
     th, td {
         color: rgb(0, 0, 80); /* Override font color for th, td */
     }
-    .section.no-image {
-        padding-right: 30%;
-        padding-left: 2%;
+	body,
+    html {
+        font-weight: 200; /* Change font weight to 200 */
     }
+	
 }
 
 @media screen and (min-width: 1201px) {
@@ -163,8 +189,8 @@ img {
     th, td {
         color: rgb(0, 0, 80); /* Override font color for th, td */
     }
-    .section.no-image {
-        padding-right: 40%;
-        padding-left: 2%;
+	body,
+    html {
+        font-weight: 200; /* Change font weight to 200 */
     }
 }
