@@ -36,13 +36,26 @@ body, html {
 }
 
 table {
-    width: 100%;
+    width: 90%; /* Reduce the width of the table */
     max-width: 100%; /* Ensure table width is responsive */
     border-collapse: collapse;
     margin-top: 50px;
     margin-bottom: 50px;
     table-layout: fixed; /* Keep the table layout fixed */
 }
+
+th:first-child,
+td:first-child {
+    text-align: left; /* Align the first column to the left */
+    width: 30%; /* Adjust the width of the first column */
+}
+
+th:not(:first-child),
+td:not(:first-child) {
+    text-align: right; /* Align the rest of the columns to the right */
+    width: 14%; /* Adjust the width of the rest of the columns */
+}
+
 
 
 
@@ -75,6 +88,8 @@ img {
     margin-top: 14px; /* Move the planet name upward by 4px */
     padding-right: 5px; /* Add 5px padding to the right of the word */
 }
+
+
 
 
 
