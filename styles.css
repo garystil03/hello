@@ -1,7 +1,7 @@
 body, html {
     margin-top: 5px; /* Add 25px margin to top and bottom */
 	margin-bottom: 25px; /* Add 25px margin to top and bottom */
-    padding: 0;
+    padding: 5px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -117,7 +117,7 @@ td:not(:first-child) {
 
 /* New styles for planet names */
 .section p em {
-    padding-right: 2%;
+    /*padding-right: 2%;*/
     display: inline-block; /* Ensure inline-block for text alignment */
     text-align: right; /* Align the planet name to the right */
 }
