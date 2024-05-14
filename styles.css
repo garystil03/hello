@@ -55,7 +55,7 @@ body, html {
   font-style: normal;
 }
 
-.roboto-light {
+.roboto-light-italic {
   font-family: 'Roboto', sans-serif;
   font-weight: 300; /* Ensures extra light weight */
   font-style: italic;
