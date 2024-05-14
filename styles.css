@@ -25,6 +25,7 @@ body, html {
 
 
 
+
 .roboto-thin {
     font-family: "Roboto", sans-serif;
     font-weight: 100; /* Ensures thin weight */
@@ -93,22 +94,21 @@ img {
     height: auto;
 }
 
-/*
-.section:first-child {
-    padding-top: 100px;
+/* Set text alignment for the first column to left */
+th:first-child,
+td:first-child {
+    text-align: left;
 }
 
-.section:last-child {
-    padding-bottom: 100px;
+/* Set text alignment for all other columns to right */
+th:not(:first-child),
+td:not(:first-child) {
+    text-align: right;
 }
-*/
 
-/*
-.section:not(:has(img)) {
-    padding-right: 40%;
-    padding-left: 5%;
-}
-*/
+
+
+
 
 .section.no-image {
     padding-right: 40%;
