@@ -144,6 +144,8 @@ td:not(:first-child) {
     th, td {
         color: rgb(0, 0, 140); /* Override font color for th, td */
     }
+	.section.no-image {
+        padding-right: 5%; /* Adjust padding for smaller screens */
 }
 
 @media screen and (min-width: 577px) and (max-width: 768px) {
@@ -153,6 +155,8 @@ td:not(:first-child) {
     }
     th, td {
         color: rgb(0, 0, 80); /* Override font color for th, td */
+		.section.no-image {
+        padding-right: 10%; /* Adjust padding for smaller screens */
     }
 }
 
@@ -164,6 +168,8 @@ td:not(:first-child) {
     th, td {
         color: rgb(0, 0, 80); /* Override font color for th, td */
     }
+	.section.no-image {
+        padding-right: 20%; /* Adjust padding for smaller screens */
 }
 
 @media screen and (min-width: 993px) and (max-width: 1200px) {
