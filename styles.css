@@ -73,6 +73,9 @@ table {
     margin-top: 50px;
     margin-bottom: 50px;
     table-layout: fixed; /* Keep the table layout fixed */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Specify font weight */
+    font-size: 14px;
 }
 
 th, td {
