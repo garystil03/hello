@@ -75,7 +75,7 @@ table {
     table-layout: fixed; /* Keep the table layout fixed */
     font-family: 'Roboto', sans-serif;
     font-weight: 300; /* Specify font weight */
-    font-size: 14px;
+    font-size: 8px;
 }
 
 th, td {
