@@ -75,7 +75,6 @@ table {
     table-layout: fixed; /* Keep the table layout fixed */
     font-family: 'Roboto', sans-serif;
     font-weight: 300; /* Specify font weight */
-    font-size: 8px;
 }
 
 th, td {
@@ -83,7 +82,7 @@ th, td {
     border-bottom: 1px solid #ddd;
     text-align: left;
     font-family: 'Roboto', sans-serif; /* Match the font family */
-    font-size: 10px; /* Match the font size */
+    font-size: 12px; /* Match the font size */
     color: rgb(0, 0, 80); /* Change font color to RGB(0,0,80) */
 }
 
