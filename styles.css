@@ -69,6 +69,18 @@ img {
     }
 }
 
+/* Left align first column, right align other columns */
+th:first-child,
+td:first-child,
+th:not(:first-child),
+td:not(:first-child) {
+    text-align: left;
+}
+
+th:not(:first-child) {
+    text-align: right;
+}
+
 @media screen and (min-width: 577px) and (max-width: 768px) {
     /* Styles for tablets */
     table {
