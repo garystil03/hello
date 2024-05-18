@@ -146,3 +146,10 @@ body, html, p, em, td {
     font-size: 16px;
     color: rgb(10, 10, 10);
 }
+
+/* Ensure links are not clickable and remove underline */
+a {
+    text-decoration: none;
+    pointer-events: none;
+}
+
