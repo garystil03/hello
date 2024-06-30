@@ -7,8 +7,7 @@ body, html, p, em, td {
 }
 
 /* Critical CSS */
-body,
-html {
+body, html {
     margin: 5px 0;
     padding: 5px;
     height: 100%;
@@ -37,8 +36,7 @@ table {
     font-size: 16px;
 }
 
-th,
-td {
+th, td {
     padding: 4px;
     border-bottom: 1px solid #ddd;
     font-family: 'Roboto', sans-serif;
@@ -47,13 +45,11 @@ td {
     color: rgb(0, 0, 80);
 }
 
-th:first-child,
-td:first-child {
+th:first-child, td:first-child {
     text-align: left;
 }
 
-th:not(:first-child),
-td:not(:first-child) {
+th:not(:first-child), td:not(:first-child) {
     text-align: right;
 }
 
@@ -76,10 +72,7 @@ body {
     padding-bottom: 30px;
 }
 
-/* Add padding to the bottom of the page */
-body {
-    padding-bottom: 30px;
-}/* Prevent underlines on email addresses */
+/* Prevent underlines on email addresses */
 a[href^="mailto:"] {
     text-decoration: none;
 }
@@ -91,3 +84,26 @@ a {
     color: inherit; /* Ensure link color matches surrounding text */
 }
 
+/* Responsive CSS */
+@media (max-width: 600px) {
+    body, html, p, em, td {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 2px;
+    }
+
+    .section.no-image {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
